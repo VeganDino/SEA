@@ -22,9 +22,9 @@ public class Item {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int itemNo;
 	
-	@ManyToOne
-	@JoinColumn(name = "fk_animal_no")
-	Animal fkAnimalNo;
+//	@ManyToOne
+//	@JoinColumn(name = "fk_animal_no")
+//	Animal fkAnimalNo;
 	
 	@Column(name = "item_img_url", length = 1000)
 	String itemImgUrl;

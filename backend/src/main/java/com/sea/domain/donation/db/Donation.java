@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sea.domain.animal.db.Animal;
 import com.sea.domain.user.db.User;
 
 @Entity
@@ -42,4 +43,8 @@ public class Donation {
 	@ManyToOne
 	@JoinColumn(name = "fk_user_no")
 	User fkUserNo;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_animal_no")
+	Animal fkAnimalNo;
 }
