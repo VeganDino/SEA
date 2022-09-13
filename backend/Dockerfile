@@ -3,6 +3,8 @@ FROM openjdk:8-jdk-alpine
 # 도커 컨테이너 외부에 노출할 포트 지정
 EXPOSE 8080
 
+WORKDIR /var/jenkins_home/workspace/save-endangered-animal/backend
+
 # 도커 내에서 사용할 변수의 값 설정 , 아무튼 그 뒤에 jar 파일 명
 ARG JAR_FILE=build/libs/backend-0.0.1-SNAPSHOT.jar
 
