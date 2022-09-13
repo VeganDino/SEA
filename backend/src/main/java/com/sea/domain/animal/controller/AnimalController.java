@@ -43,16 +43,21 @@ public class AnimalController {
 
 	@Autowired
 	AnimalService animalService;
-	
+
+	@ApiOperation(value = "동물생성")
 	@PostMapping()
+	@ApiResponses({
+			@ApiResponse(code = 200, message = "성공", response = BaseResponseBody.class),
+			@ApiResponse(code = 400, message = "실패", response = BaseResponseBody.class),
+			})
 	public ResponseEntity<? extends BaseResponseBody> registerAniaml(@RequestBody AniamlRegisterPostReq registerInfo) {
-		
+
 		try {
 			animalService.registerAnimal(registerInfo);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			return ResponseEntity.status(400).body(BaseResponseBody.of(400, "Failed"));
 		}
-		
+
 		return ResponseEntity.status(200).body(BaseResponseBody.of(200, "Success"));
 	}
 
@@ -100,10 +105,11 @@ public class AnimalController {
 	@ApiResponses({ @ApiResponse(code = 200, message = "성공", response = AnimalDto.class),
 
 	})
-	public ResponseEntity<? extends BaseResponseBody> getMyList(@ApiIgnore Authentication authentication, Principal principal) {
+	public ResponseEntity<? extends BaseResponseBody> getMyList(@ApiIgnore Authentication authentication,
+			Principal principal) {
 		UserDetails userDetails = (UserDetails) authentication.getDetails();
 		User user = userDetails.getUser();
-		
+
 		List<MyAnimalDto> list = animalService.getMyAnimalListByUserName(user);
 
 		return ResponseEntity.status(200).body(MyListGetRes.of(200, "Success", list));
