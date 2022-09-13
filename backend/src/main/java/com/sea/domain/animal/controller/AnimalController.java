@@ -21,7 +21,7 @@ import com.sea.common.model.response.BaseResponseBody;
 import com.sea.domain.animal.dto.AnimalDto;
 import com.sea.domain.animal.dto.AnimalNameDto;
 import com.sea.domain.animal.dto.MyAnimalDto;
-import com.sea.domain.animal.request.AniamlRegisterPostReq;
+import com.sea.domain.animal.request.AnimalRegisterPostReq;
 import com.sea.domain.animal.response.AnimalDetailGetRes;
 import com.sea.domain.animal.response.AnimalListGetRes;
 import com.sea.domain.animal.response.AnimalNameListGetRes;
@@ -50,7 +50,7 @@ public class AnimalController {
 			@ApiResponse(code = 200, message = "성공", response = BaseResponseBody.class),
 			@ApiResponse(code = 400, message = "실패", response = BaseResponseBody.class),
 			})
-	public ResponseEntity<? extends BaseResponseBody> registerAniaml(@RequestBody AniamlRegisterPostReq registerInfo) {
+	public ResponseEntity<? extends BaseResponseBody> registerAniaml(@RequestBody AnimalRegisterPostReq registerInfo) {
 
 		try {
 			animalService.registerAnimal(registerInfo);

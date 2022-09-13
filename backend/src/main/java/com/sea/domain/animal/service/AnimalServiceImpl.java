@@ -18,7 +18,7 @@ import com.sea.domain.animal.db.repository.AnimalRepository;
 import com.sea.domain.animal.dto.AnimalDto;
 import com.sea.domain.animal.dto.AnimalNameDto;
 import com.sea.domain.animal.dto.MyAnimalDto;
-import com.sea.domain.animal.request.AniamlRegisterPostReq;
+import com.sea.domain.animal.request.AnimalRegisterPostReq;
 import com.sea.domain.donation.db.entity.Donation;
 import com.sea.domain.donation.db.repository.DonationRepository;
 import com.sea.domain.donation.dto.DonationDto;
@@ -143,7 +143,7 @@ public class AnimalServiceImpl implements AnimalService {
 	}
 
 	@Override
-	public Animal registerAnimal(AniamlRegisterPostReq registerInfo) {
+	public Animal registerAnimal(AnimalRegisterPostReq registerInfo) {
 		int maxItem = 100;
 
 		switch (registerInfo.getAnimalEndangeredLevel()) {

@@ -3,7 +3,7 @@ package com.sea.domain.animal.request;
 import lombok.Getter;
 
 @Getter
-public class AniamlRegisterPostReq {
+public class AnimalRegisterPostReq {
 	String animalKoreanName;
 	String animalEnglishName;
 	String animalScientificName;

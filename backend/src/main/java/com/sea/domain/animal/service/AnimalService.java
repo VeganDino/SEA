@@ -9,7 +9,7 @@ import com.sea.domain.animal.db.entity.Animal;
 import com.sea.domain.animal.dto.AnimalDto;
 import com.sea.domain.animal.dto.AnimalNameDto;
 import com.sea.domain.animal.dto.MyAnimalDto;
-import com.sea.domain.animal.request.AniamlRegisterPostReq;
+import com.sea.domain.animal.request.AnimalRegisterPostReq;
 import com.sea.domain.user.db.entity.User;
 
 public interface AnimalService {
@@ -22,5 +22,5 @@ public interface AnimalService {
 	
 	List<MyAnimalDto> getMyAnimalListByUserName(User user);
 
-	Animal registerAnimal(AniamlRegisterPostReq registerInfo);
+	Animal registerAnimal(AnimalRegisterPostReq registerInfo);
 }
