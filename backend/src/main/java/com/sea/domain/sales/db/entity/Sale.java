@@ -1,4 +1,4 @@
-package com.sea.domain.sales.db;
+package com.sea.domain.sales.db.entity;
 
 import java.time.LocalDateTime;
 

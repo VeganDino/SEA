@@ -1,4 +1,4 @@
-package com.sea.domain.item.db.dto;
+package com.sea.domain.item.dto;
 
 import com.sea.domain.item.db.entity.Item;
 

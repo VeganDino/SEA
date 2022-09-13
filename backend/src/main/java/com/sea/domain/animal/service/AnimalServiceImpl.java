@@ -22,9 +22,9 @@ import com.sea.domain.animal.request.AnimalRegisterPostReq;
 import com.sea.domain.donation.db.entity.Donation;
 import com.sea.domain.donation.db.repository.DonationRepository;
 import com.sea.domain.donation.dto.DonationDto;
-import com.sea.domain.item.db.dto.ItemDto;
 import com.sea.domain.item.db.entity.Item;
 import com.sea.domain.item.db.repository.ItemRepository;
+import com.sea.domain.item.dto.ItemDto;
 import com.sea.domain.user.db.entity.User;
 
 import lombok.RequiredArgsConstructor;
