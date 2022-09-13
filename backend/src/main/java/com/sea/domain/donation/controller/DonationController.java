@@ -29,7 +29,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/vi/donation")
+@RequestMapping("/api/v1/donation")
 public class DonationController {
 
 	@Autowired

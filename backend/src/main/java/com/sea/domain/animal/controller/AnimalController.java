@@ -38,7 +38,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/vi/animal")
+@RequestMapping("/api/v1/animal")
 public class AnimalController {
 
 	@Autowired
