@@ -1,0 +1,15 @@
+.outBox {
+  margin-top: 3rem;
+}
+
+.tabs {
+  background-color: #d3e0ea;
+  border-radius: 0.5rem;
+}
+
+.tab {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+}
