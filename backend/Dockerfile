@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11
 
 WORKDIR /var/jenkins_home/workspace/save-endangered-animal/backend
 
@@ -22,3 +22,4 @@ ENTRYPOINT ["java","-jar","app.jar"]
 
 # 도커 timezone 변경
 ENV TZ=Asia/Seoul
+RUN sudo apt-get install -y tzdata
