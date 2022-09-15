@@ -25,6 +25,8 @@ import AnimalList from '../animalList/AnimalList';
 import Modal from '../../components/modal/Modal'
 import NFTsale from '../modal/NFTsale/NFTsale'
 
+import SweetTest from '../modal/SweetTest'
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
@@ -76,6 +78,7 @@ export default function Mainpage() {
               <button onClick={openModal} >테스트 모달</button>
               <Modal open={modalOpen} close={closeModal} header="테스트모달"><NFTsale /></Modal>
             </Stack>
+            <SweetTest />
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
