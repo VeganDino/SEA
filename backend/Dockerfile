@@ -22,4 +22,3 @@ ENTRYPOINT ["java","-jar","app.jar"]
 
 # 도커 timezone 변경
 ENV TZ=Asia/Seoul
-RUN sudo apt-get install -y tzdata
