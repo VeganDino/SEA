@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine AS builder
+FROM openjdk:8-jdk-alpine
 
 WORKDIR /var/jenkins_home/workspace/save-endangered-animal/backend
 
