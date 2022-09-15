@@ -10,6 +10,7 @@ import DonationList from "./donationList/DonationList"
 import NFTList from "./NFTList/NFTList"
 import SalesList from "./salesList/SalesList"
 
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props
 
@@ -61,15 +62,15 @@ export default function BasicTabs() {
           variant="fullWidth"
           aria-label="myPage tab"
         >
-          <Tab className={styles.tab} label="작품목록" {...a11yProps(0)} />
-          <Tab className={styles.tab} label="내 기부 내역" {...a11yProps(1)} />
+          <Tab sx={{fontSize:18,fontWeight:'bold'}} label="작품목록" {...a11yProps(0)} />
+          <Tab sx={{fontSize:18,fontWeight:'bold'}} label="내 기부 내역" {...a11yProps(1)} />
           <Tab
-            className={styles.tab}
+            sx={{fontSize:18,fontWeight:'bold'}}
             label="판매 중인 상품 목록"
             {...a11yProps(2)}
           />
           <Tab
-            className={styles.tab}
+            sx={{fontSize:18,fontWeight:'bold'}}
             label="기부한 동물 목록"
             {...a11yProps(3)}
           />
