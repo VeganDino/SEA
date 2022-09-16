@@ -2,14 +2,6 @@ FROM openjdk:11
 
 WORKDIR /var/jenkins_home/workspace/save-endangered-animal/backend
 
-COPY gradlew .
-COPY gradle gradle
-COPY build.gradle .
-COPY settings.gradle .
-COPY src src
-RUN chmod +x ./gradlew
-RUN ./gradlew build
-
 ARG JAR_FILE=build/libs/backend-0.0.1-SNAPSHOT.jar
 
 # JAR_FILE에 해당하는 파일 app.jar
