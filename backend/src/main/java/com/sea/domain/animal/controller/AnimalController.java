@@ -14,13 +14,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sea.common.auth.UserDetails;
 import com.sea.common.model.response.BaseResponseBody;
 import com.sea.domain.animal.dto.AnimalDto;
 import com.sea.domain.animal.dto.AnimalNameDto;
 import com.sea.domain.animal.dto.MyAnimalDto;
+import com.sea.domain.animal.request.AnimalImagePostReq;
 import com.sea.domain.animal.request.AnimalRegisterPostReq;
 import com.sea.domain.animal.response.AnimalDetailGetRes;
 import com.sea.domain.animal.response.AnimalListGetRes;
@@ -46,14 +49,26 @@ public class AnimalController {
 
 	@ApiOperation(value = "동물생성")
 	@PostMapping()
-	@ApiResponses({
-			@ApiResponse(code = 200, message = "성공", response = BaseResponseBody.class),
-			@ApiResponse(code = 400, message = "실패", response = BaseResponseBody.class),
-			})
-	public ResponseEntity<? extends BaseResponseBody> registerAniaml(@RequestBody AnimalRegisterPostReq registerInfo) {
+	@ApiResponses({ @ApiResponse(code = 200, message = "성공", response = BaseResponseBody.class),
+			@ApiResponse(code = 400, message = "실패", response = BaseResponseBody.class), })
+	public ResponseEntity<? extends BaseResponseBody> registerAnimal(@RequestBody AnimalRegisterPostReq registerInfo) {
 
 		try {
 			animalService.registerAnimal(registerInfo);
+		} catch (Exception e) {
+			return ResponseEntity.status(400).body(BaseResponseBody.of(400, "Failed"));
+		}
+
+		return ResponseEntity.status(200).body(BaseResponseBody.of(200, "Success"));
+	}
+
+	@ApiOperation(value = "동물 이미지 등록")
+	@PostMapping()
+	@ApiResponses({ @ApiResponse(code = 200, message = "성공", response = BaseResponseBody.class),
+			@ApiResponse(code = 400, message = "실패", response = BaseResponseBody.class), })
+	public ResponseEntity<? extends BaseResponseBody> registerAnimalImage(@RequestParam MultipartFile file, @RequestBody AnimalImagePostReq imageInfo) {
+		try {
+			
 		} catch (Exception e) {
 			return ResponseEntity.status(400).body(BaseResponseBody.of(400, "Failed"));
 		}
