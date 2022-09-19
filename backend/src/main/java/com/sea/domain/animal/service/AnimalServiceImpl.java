@@ -78,6 +78,8 @@ public class AnimalServiceImpl implements AnimalService {
 			String uuid = UUID.randomUUID().toString();
 			folderPath += registerInfo.getAnimalEnglishName();
 
+			log.info("폴더 경로 : {}", folderPath);
+
 			String fileName = registerInfo.getAnimalEnglishName() + "/" + uuid + "_" + file.getOriginalFilename();
 
 			File Folder = new File(folderPath);
