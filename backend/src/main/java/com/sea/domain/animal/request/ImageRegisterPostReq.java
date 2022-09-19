@@ -1,11 +1,11 @@
 package com.sea.domain.animal.request;
 
 import lombok.Getter;
-import lombok.Setter;
+import lombok.ToString;
 
-@Setter
 @Getter
-public class AnimalImagePostReq {
+@ToString
+public class ImageRegisterPostReq {
 	int animalId;
 	String animalEnglishName;
 	String animalKoreanName;
