@@ -76,7 +76,7 @@ public class AnimalServiceImpl implements AnimalService {
 			Animal animal = animalRepository.findByAnimalId(registerInfo.getAnimalId()).get();
 
 			String uuid = UUID.randomUUID().toString();
-			folderPath = registerInfo.getAnimalEnglishName();
+			folderPath += registerInfo.getAnimalEnglishName();
 
 			String fileName = registerInfo.getAnimalEnglishName() + "/" + uuid + "_" + file.getOriginalFilename();
 
