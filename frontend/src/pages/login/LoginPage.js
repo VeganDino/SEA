@@ -5,6 +5,9 @@ import { useCookies } from 'react-cookie';
 import { ethers } from "ethers";
 
 const LoginPage = () => {
+  const [haveMetamask, sethaveMetamask] = useState(true);
+  const [isConnected, setIsConnected] = useState(false);
+
   const [errorMessage, setErrorMessage] = useState(null);
   const [account, setAccount] = useState(null);
   const [balance, setBalance] = useState(null);
@@ -15,8 +18,20 @@ const LoginPage = () => {
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", accountsChanged);
       window.ethereum.on("chainChanged", chainChanged);
-    }
-  }, []);
+    };
+
+    const { ethereum } = window;
+    const checkMetamaskAvailability = async () => {
+      if (!ethereum) {
+        sethaveMetamask(false);
+      }
+      sethaveMetamask(true);
+    };
+    checkMetamaskAvailability();
+  }, 
+  
+  
+  []);
 
   const connectHandler = async () => {
     if (window.ethereum) {
@@ -25,11 +40,13 @@ const LoginPage = () => {
           method: "eth_requestAccounts",
         });
         await accountsChanged(res[0]);
+        setIsConnected(true);
       } catch (err) {
         console.error(err);
         setErrorMessage("MetaMask 연결 에러");
       }
     } else {
+      alert("MetaMask를 설치하세요.")
       setErrorMessage("MetaMask를 설치하세요.");
       window.open('https://metamask.io/download.html');
     }
@@ -38,6 +55,7 @@ const LoginPage = () => {
   const accountsChanged = async (newAccount) => {
     setAccount(newAccount);
     setCookie('id', newAccount);
+    navigate("/main");
     try {
       const balance = await window.ethereum.request({
         method: "eth_getBalance",
@@ -54,15 +72,18 @@ const LoginPage = () => {
     setErrorMessage(null);
     setAccount(null);
     setBalance(null);
-    navigate("/main");
   };
 
   return (
+    <div>
+      <img src={"https://pbs.twimg.com/profile_images/1403343064203239426/-9bH-cRS_400x400.jpg"} 
+                className="App-logo" alt="logo" />
+
       <Stack spacing={2}>
-        <Typography variant="h6"> 지갑: {account} </Typography>
+        {/* <Typography variant="h6"> 지갑: {account} </Typography>
         <Typography variant="h6">
           잔고 : {balance} {balance ? "ETH" : null}
-        </Typography>
+        </Typography> */}
         <Button onClick={connectHandler}>MetaMask 로그인</Button>
         {errorMessage ? (
           <Typography variant="body1" color="red">
@@ -70,6 +91,7 @@ const LoginPage = () => {
           </Typography>
         ) : null}
       </Stack>
+      </div>
   );
 };
 
