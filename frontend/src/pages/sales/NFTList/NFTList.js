@@ -55,8 +55,8 @@ export default function NFTList(props) {
   return (
     <div className={styles.outDiv}>
       <Grid container spacing={3}>
-        {data.currentData().map((data) => (
-          <Grid item key={data} xs={12} sm={6} md={3}>
+        {data.currentData().map((data, idx) => (
+          <Grid item key={idx} xs={12} sm={6} md={3}>
             <NFTCard NFTData={data}></NFTCard>
           </Grid>
         ))}
