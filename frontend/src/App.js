@@ -14,9 +14,10 @@ import { CookiesProvider } from 'react-cookie';
 function App() {
   let header = (
     <div>
-      <Link to="/login">
+      {/* <Link to="/login">
         <button>로그인</button>
-      </Link>
+      </Link> */}
+      <LoginPage />
     </div>
   )
 

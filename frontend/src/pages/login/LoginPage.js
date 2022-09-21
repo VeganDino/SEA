@@ -37,6 +37,7 @@ const LoginPage = () => {
 
   const accountsChanged = async (newAccount) => {
     setAccount(newAccount);
+    setCookie('id', newAccount);
     try {
       const balance = await window.ethereum.request({
         method: "eth_getBalance",
@@ -52,7 +53,6 @@ const LoginPage = () => {
   const chainChanged = () => {
     setErrorMessage(null);
     setAccount(null);
-    setCookie('id', account);
     setBalance(null);
     navigate("/main");
   };
