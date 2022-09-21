@@ -69,6 +69,9 @@ public class UserController {
             // 쿠키
             Cookie accessToken = cookieUtil.createCookie(JwtTokenUtil.ACCESS_TOKEN_NAME, accessJwt);
             Cookie refreshToken = cookieUtil.createCookie(JwtTokenUtil.REFRESH_TOKEN_NAME, refreshJwt);
+            
+            log.info("cookie 생성[id : {}, value : {}]", accessToken.getName(), accessToken.getValue());
+            log.info("cookie 생성[id : {}, value : {}]", refreshToken.getName(), refreshToken.getValue());
 
             // redis 저장
             redisUtil.setDataExpire(refreshJwt, userAddress, JwtTokenUtil.refreshTokenExpiration);
@@ -91,6 +94,9 @@ public class UserController {
 
         Cookie accessCookie = cookieUtil.getCookie(request,  jwtTokenUtil.ACCESS_TOKEN_NAME);
         Cookie refreshCookie = cookieUtil.getCookie(request, jwtTokenUtil.REFRESH_TOKEN_NAME);
+        
+        log.info("cookie[id : {}, value : {}]", accessCookie.getName(), accessCookie.getValue());
+        log.info("cookie[id : {}, value : {}]", refreshCookie.getName(), refreshCookie.getValue());
 
         // < Access Token 작업 >
         // 1. access token 담겨있는 cookie 있는지 확인
