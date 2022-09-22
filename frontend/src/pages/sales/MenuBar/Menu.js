@@ -49,8 +49,8 @@ export default function Menu(props) {
           label="동물 종 선택하기"
           onChange={handleChange}
         >
-          {animalList.map((animal) => (
-            <MenuItem value={animal.animalName}>{animal.animalName}</MenuItem>
+          {animalList.map((animal,idx) => (
+            <MenuItem key={idx} value={animal.animalName}>{animal.animalName}</MenuItem>
           ))}
         </Select>
       </FormControl>
