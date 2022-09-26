@@ -10,6 +10,7 @@ const convertURLtoFile = async (url) => {
     const ext = url.split(".").pop(); // url 구조에 맞게 수정할 것
     const filename = url.split("/").pop(); // url 구조에 맞게 수정할 것
     const metadata = { type: `image/${ext}` };
+    
     return new File([data], filename, metadata);
   };
 
@@ -17,7 +18,7 @@ const convertURLtoFile = async (url) => {
 export async function createToken(name, description, imgUrl) {
 
     const imgFile=await convertURLtoFile(imgUrl);
-
+    //console.log(imgFile)
     const metadata = {
         name: name,
         description: description,
@@ -25,9 +26,9 @@ export async function createToken(name, description, imgUrl) {
     };
 
     const result = await client.store(metadata);
-    console.log(result);
-    console.log(JSON.stringify(result));
+    console.log(result.url.slice(7));
+    //console.log(JSON.stringify(result));
 
-    return JSON.stringify(result);
+    return "https://ipfs.io/ipfs/"+result.url.slice(7);
 
 }
