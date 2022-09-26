@@ -10,8 +10,9 @@ import MyPage from "./pages/mypage/MyPage"
 import AnimalListPage from "./pages/animalList/AnimalList"
 import AnimalList from "./pages/animalList/AnimalList"
 import AnimalDetail from "./pages/animalDetail/AnimalDetailPage"
-import { CookiesProvider } from 'react-cookie';
+import { CookiesProvider } from "react-cookie"
 import SalePage from "pages/sales/SalePage"
+import Minting from "pages/minting/Minting"
 
 function App() {
   let header = (
