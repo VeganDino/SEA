@@ -5,8 +5,8 @@ import logo from '../footer/sea.png'
 export default function Footer() {
   return (
     // <CDBFooter className="shadow"> 
-    <CDBFooter > 
-    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <CDBFooter className="bg"> 
+    <br/><br/><br/><br/>
     {/* <CDBBox><img alt="logo" src={logo} width="50px" /></CDBBox> */}
       <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '70%' }}>
         <CDBBox display="flex" justifyContent="between" className="flex-wrap">

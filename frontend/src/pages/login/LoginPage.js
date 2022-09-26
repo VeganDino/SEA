@@ -107,6 +107,7 @@ const LoginPage = () => {
           </Typography>
         ) : null}
       </Stack>
+      <br /><br /><br /><br /><br /><br />
       </div>
   );
 };
