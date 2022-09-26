@@ -38,7 +38,7 @@ function App() {
           <Route path="main/sale" element={<SalePage />}></Route>
           <Route path="main/animalDetail" element={<AnimalDetail />}></Route>
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
       </CookiesProvider> 
     </div>

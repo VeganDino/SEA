@@ -130,6 +130,7 @@ export default function NFTsale() {
                   endDate={endDate}
                   locale={ko}
                   />
+                판매 종료일 : 
                 <DatePicker 
                   dateFormat="yyyy년 MM월 dd일"
                   selected={endDate} 
