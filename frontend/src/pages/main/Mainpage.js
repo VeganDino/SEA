@@ -39,8 +39,7 @@ export default function Mainpage() {
   const openModal = () => { setModalOpen(true); };
   const closeModal = () => { setModalOpen(false); };
 
-  
-  // const buySomething = 
+
   // console.log(cookies.load('id'));
 
   return (

@@ -119,8 +119,9 @@ export default function NFTsale() {
                 ></img>
             </Typography>
             <Typography variant="body2" gutterBottom>
-           
-              판매 시작일 : 
+              <div>
+              <div>
+              판매 시작일 : </div>
                 <DatePicker 
                   dateFormat="yyyy년 MM월 dd일"
                   selected={startDate} 
@@ -129,7 +130,7 @@ export default function NFTsale() {
                   startDate={startDate}
                   endDate={endDate}
                   locale={ko}
-                  />
+                  /> </div>
                 판매 종료일 : 
                 <DatePicker 
                   dateFormat="yyyy년 MM월 dd일"
