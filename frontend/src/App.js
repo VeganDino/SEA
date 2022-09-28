@@ -40,7 +40,7 @@ function App() {
             <Route path="main/animalDetail" element={<AnimalDetail />}></Route>
             <Route path="main/minting" element={<Minting />}></Route>
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </BrowserRouter>
       </CookiesProvider>
     </div>

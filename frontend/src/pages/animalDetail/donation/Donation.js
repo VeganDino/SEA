@@ -37,11 +37,15 @@ export default function Donation(props) {
       const bal = await web3.eth.getBalance(currentAccounts[0]);
       // console.log(balance);
       setBalance(bal);
-      console.log(web3);
+      // console.log(web3);
       return currentAccounts[0];
     } catch {
       console.log("err");
     }
+  }
+
+  function enterMinting(e) {
+    navigate("/main/minting", {state : {animalId : e.Id}})
   }
 
   const infoClick = () => {
@@ -51,12 +55,16 @@ export default function Donation(props) {
             showCancelButton: true,
             confirmButtonText: "OK",
             cancelButtonText: "Cancel",
-            icon: 'warning'
+            icon: 'warning',
+            timer: 1500
     }).then((result) => {  
       // donation : 내가 기부할 기부금 
       // balance : 잔고
       if (result.isConfirmed) {
-        if(balance<0.01){
+        if(donation==null){
+          Swal.fire('미입력', '토큰을 입력해주세요.<br />0.01 SSF 이상 기부 가능합니다.', 'error');
+        }
+        else if(balance<0.01){
           Swal.fire('잔액 미달', '토큰잔액이 최소 기부금 미달입니다.<br />충전 후 기부해주세요.', 'error')
         }
         else if(donation>balance){
@@ -65,9 +73,14 @@ export default function Donation(props) {
         else if(donation<0.01){
           Swal.fire('최소 기부금 미달', '기부금은 0.01SSF 이상 가능합니다.<br />충전 후 기부해주세요.', 'error')
         }
+        else if(animalInfo.animalNowItem===0){
+          Swal.fire('남아있는 NFT 기부 증서가 없습니다.', '기부 증서 없이 기부만 하시겠습니까?.', 'question')
+        }
         else {
-          Swal.fire('기부가 완료되었습니다.', '감사합니다. </br>많은 기부 부탁드립니다.', 'success');
-          window.location = "/main/minting";
+          Swal.fire(
+            '기부가 완료되었습니다.', '감사합니다. </br>많은 기부 부탁드립니다.</br>Minting 페이지로 넘어갑니다.', 'success'
+            ).then(() =>
+            navigate("/main/minting", { state: { animalId: animalId } }));
         }
       } 
       else
@@ -75,9 +88,7 @@ export default function Donation(props) {
     })
   }
 
-  const [donation, setDonation] = useState({
-    mydonation: "",
-  });
+  const [donation, setDonation] = useState(null);
   
   const onChangeAccount = (e) => {
     setDonation({
@@ -132,3 +143,31 @@ export default function Donation(props) {
       </Grid>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+// window.location = "/main/minting";
+          // <Link to={{
+          //   pathname : `/main/minting`,   // `/animal/defail/{this.state.animal_id}`
+          //   state : {
+          //     animalId : this.state.animalId,
+          //     animalKoreanName : this.state.animalKoreanName,
+          //     animalEnglishName : this.state.animalEnglishName,
+          //     animalScientificName : this.state.animalScientificName,
+          //     animalDesc : this.state.animalDesc,
+          //     animalMaxItem : this.state.animalMaxItem,
+          //     animalNowItem : this.state.animalNowItem,
+          //     animalImg : this.state.animalImg,
+          //     animalYn : this.state.animalYn,
+          //     animalEndangeredLevel : this.state.animalEndangeredLevel,
+          //     animalType : this.state.animalType
+          //   }
+          // }}></Link>
