@@ -10,5 +10,5 @@ public interface UserService {
 
     void updateTestResult(User user, UserUpdateTestResultPutReq updateInfo);
 
-    User getTestResultByUserId(int userId);
+    List<String> getTestResultByUserId(int userId);
 }

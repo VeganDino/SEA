@@ -38,11 +38,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getTestResultByUserId(int userId) {
+    public List<String> getTestResultByUserId(int userId) {
         Optional<User> user = userRepository.findById(userId);
 
         if (user.isPresent()) {
-            return user.get();
+            return user.get().getUserTestResult();
         } else {
             return null;
         }

@@ -110,15 +110,14 @@ public class UserController {
 	@ApiOperation(value = "검사 결과 얻기")
 	@GetMapping("/test-result")
 	@ApiResponses({ @ApiResponse(code = 204, message = "성공"), @ApiResponse(code = 400, message = "존재하지 않는 유저입니다.") })
-	public ResponseEntity<? extends BaseResponseBody> getTestResult(@ApiIgnore Authentication authentication) {
-		UserDetails userDetails = (UserDetails) authentication.getDetails();
-		User user = userDetails.getUser();
+	public ResponseEntity<? extends BaseResponseBody> getTestResult(HttpServletRequest request) {
+		int userId = jwtTokenUtil.getUserId(request.getCookies());
 
-		user = userService.getTestResultByUserId(user.getUserId());
+		List<String> testResult = userService.getTestResultByUserId(userId);
 
-		if (user == null) {
+		if (testResult == null) {
 			return ResponseEntity.status(400).body(BaseResponseBody.of(400, "존재하지 않는 유저입니다."));
 		}
-		return ResponseEntity.status(200).body(UserTestResultGetRes.of(200, "Success", user.getUserTestResult()));
+		return ResponseEntity.status(200).body(UserTestResultGetRes.of(200, "Success", testResult));
 	}
 }
