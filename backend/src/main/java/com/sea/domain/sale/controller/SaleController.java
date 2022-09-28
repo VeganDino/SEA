@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,13 +23,11 @@ import com.sea.domain.sale.request.SaleRegisterPostReq;
 import com.sea.domain.sale.response.SaleDetailGetRes;
 import com.sea.domain.sale.response.SaleListGetRes;
 import com.sea.domain.sale.service.SaleService;
-import com.sea.domain.user.db.entity.User;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
-import springfox.documentation.annotations.ApiIgnore;
 
 @Slf4j
 @RestController
@@ -44,8 +40,7 @@ public class SaleController {
 	@ApiOperation(value = "판매 등록하기")
 	@PostMapping()
 	@ApiResponses({ @ApiResponse(code = 200, message = "성공"), })
-	public ResponseEntity<? extends BaseResponseBody> registerSale(@ApiIgnore Authentication authentication,
-			@RequestBody SaleRegisterPostReq registerInfo) {
+	public ResponseEntity<? extends BaseResponseBody> registerSale(@RequestBody SaleRegisterPostReq registerInfo) {
 
 		Sale sale = saleService.createSale(registerInfo);
 
