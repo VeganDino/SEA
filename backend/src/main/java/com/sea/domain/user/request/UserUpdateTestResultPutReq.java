@@ -1,10 +1,15 @@
 package com.sea.domain.user.request;
 
-import java.util.List;
+import java.util.Arrays;
 
 import lombok.Getter;
 
 @Getter
 public class UserUpdateTestResultPutReq  {
-    List<String> list;
+    String[] list;
+
+	@Override
+	public String toString() {
+		return "UserUpdateTestResultPutReq [list=" + Arrays.toString(list) + "]";
+	}
 }

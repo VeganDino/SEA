@@ -97,10 +97,11 @@ public class UserController {
 			@RequestBody UserUpdateTestResultPutReq updateInfo) {
 		UserDetails userDetails = (UserDetails) authentication.getDetails();
 		User user = userDetails.getUser();
-
+		
 		try {
 			userService.updateTestResult(user, updateInfo);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return ResponseEntity.status(400).body(BaseResponseBody.of(400, "존재하지 않는 유저입니다."));
 		}
 		return ResponseEntity.status(204).body(BaseResponseBody.of(200, "Success"));
