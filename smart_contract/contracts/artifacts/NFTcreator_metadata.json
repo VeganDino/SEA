@@ -206,6 +206,44 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_tokenURI",
+						"type": "string"
+					}
+				],
+				"name": "getIpfsHash",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getTokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -324,6 +362,24 @@
 					}
 				],
 				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_ipfsHash",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURI",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -478,11 +534,11 @@
 	},
 	"sources": {
 		"contracts/NFTcreator.sol": {
-			"keccak256": "0x9a3e3e3a865ad5d25ffcf44b13a864a8965c44e2c5846b625dafb27bb46a03b0",
+			"keccak256": "0xe2522be6a4175b6e57389705a4f788bf123ff970f527a44730748b4005798852",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://91027a43362961fd5aa3e1c4d372c5820ebb39e5046e14574727b204c897a8bc",
-				"dweb:/ipfs/QmdjVeb8WKk9q5DdjZA26FsYTDHag9Bcg1rp37sdmbdzKn"
+				"bzz-raw://d48b0f3d63bf9cc63f2e8398ef9456f0c8d911f07efbe549b7fd68e3e942a60b",
+				"dweb:/ipfs/QmVzv7EtL3oqqUPs5Uhgm33e6SvkwrgZnFvUiJA6ser573"
 			]
 		},
 		"contracts/token/ERC721/ERC721.sol": {

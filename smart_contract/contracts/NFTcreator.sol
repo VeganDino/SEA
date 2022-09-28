@@ -22,21 +22,19 @@ contract NFTcreator is ERC721 {
     }
 
     //임의의 주소로 전송가능
-    function _baseURI() internal pure override returns (string memory) {
-        // return "http://localhost:3000/";
-        return "https://ipfs.io/ipfs/";
-    }
+    // function _baseURI() internal pure override returns (string memory) {
+    //     // return "http://localhost:3000/";
+    //     return "https://ipfs.io/ipfs/";
+    // }
 
     // tokenId를 매개변수로 호출하면 token를 반환하는 함수
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
         return tokenURIs[tokenId];
-        //json파일을 가져오게 되면 opensea등에서 자동으로 데이터 분리하여 확인 가능
-        // return 'https://ipfs.io/ipfs/QmeEqonrGXZT4yRkWhg4FxcoyZUra3yQH3hd6JucWGMSNg/1/1.json';
     }
 
     // 해당 함수를 호출함으로써 호출자가 지정한 tokenURI를 새롭게 발행한다.
     // 내부적으로 새로운 토큰 식별자(tokenId)를 부여받고 _mint()를 호출한다.
-    // 상태변수에 토큰 식별자의 toeknURI 정보를 추가한다. 저위에 mapping에 추가하라는 말인듯
+    // 상태변수에 토큰 식별자의 toeknURI 정보를 추가한다.
     // 새롭게 생성된 토큰 식별자를 반환한다.
     function create(address to, string memory _tokenURI) public returns (uint256) {
         // TODO
@@ -48,9 +46,40 @@ contract NFTcreator is ERC721 {
         emit createNFT(tokenId, to);
         return tokenId;
     }
+    
 
-    //json파일을 받아 안에 있는 데이터들을 꺼낼 때
-    // function _minting(uint _tokenId) public{
-    //     _mint(msg.sender, _tokenId);
+    //react로부터 받은 ipfs처리된 json파일을 tokenURI에 저장
+    // function setTokenURI(uint256 _tokenId, string memory _tokenURI) public {
+    //     tokenURIs[_tokenId] = _tokenURI;
     // }
+
+    function getTokenURI(uint256 _tokenId) public view returns (string memory) {
+        return tokenURIs[_tokenId];
+    }
+
+
+    //json파일에서 ipfsHash 추출
+    function getIpfsHash(string memory _tokenURI) public pure returns (string memory) {
+        bytes memory _tokenURIBytes = bytes(_tokenURI);
+        uint256 _tokenURIBytesLength = _tokenURIBytes.length;
+        bytes memory _ipfsHashBytes = new bytes(_tokenURIBytesLength);
+        uint256 _ipfsHashBytesIndex = 0;
+        for (uint256 i = 0; i < _tokenURIBytesLength; i++) {
+            if (_tokenURIBytes[i] == 0x2f) {
+                _ipfsHashBytesIndex = i + 1;
+                break;
+            }
+        }
+        for (uint256 i = _ipfsHashBytesIndex; i < _tokenURIBytesLength; i++) {
+            _ipfsHashBytes[i - _ipfsHashBytesIndex] = _tokenURIBytes[i];
+        }
+        return string(_ipfsHashBytes);
+    }
+
+    //encodePacked로 https://ipfs.io/ipfs/ + ipfsHash를 합쳐서 tokenURI에 저장
+    function setTokenURI(uint256 _tokenId, string memory _ipfsHash) public {
+        tokenURIs[_tokenId] = string(abi.encodePacked("https://ipfs.io/ipfs/", _ipfsHash));
+    }
+
+   
 }
