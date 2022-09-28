@@ -94,12 +94,12 @@ public class UserController {
 	@PutMapping("/test-result")
 	@ApiResponses({ @ApiResponse(code = 204, message = "성공"), @ApiResponse(code = 400, message = "존재하지 않는 유저입니다.") })
 	public ResponseEntity<? extends BaseResponseBody> updateTestResult(@ApiIgnore Authentication authentication,
-			@RequestBody List<String> list) {
+			@RequestBody UserUpdateTestResultPutReq updateInfo) {
 		UserDetails userDetails = (UserDetails) authentication.getDetails();
 		User user = userDetails.getUser();
 
 		try {
-			userService.updateTestResult(user, list);
+			userService.updateTestResult(user, updateInfo);
 		} catch (Exception e) {
 			return ResponseEntity.status(400).body(BaseResponseBody.of(400, "존재하지 않는 유저입니다."));
 		}
