@@ -1,7 +1,7 @@
 import axios from "axios"
 
-//const HOST = "http://j7a506.p.ssafy.io:8080/api/v1"
-const HOST = "http://localhost:8080/api/v1"
+const HOST = "http://j7a506.p.ssafy.io:8080/api/v1"
+//const HOST = "http://localhost:8080/api/v1"
 
 const USER = "/user"
 const DONATION = "/donation"
