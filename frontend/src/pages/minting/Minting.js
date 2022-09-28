@@ -11,6 +11,7 @@ import ImageCard from "./ImageCard"
 import styles from "./Minting.module.css"
 import * as IPFS from "components/ipfs/IPFS"
 import api from "api/api"
+import { useLocation } from "react-router-dom"
 
 const Minting = () => {
   const [loading, setLoading] = useState(false)
@@ -24,10 +25,12 @@ const Minting = () => {
   //선택한 이미지 변수
   const [selectImg, setSelectImg] = useState("")
   //동물 정보
-  const animalDesc = "이 동물은 귀여워요"
-  const animalName = "사막여우"
+  const location = useLocation()
 
-  const animalEngName = "fox"
+  const animalDesc = location.state.animalDesc
+  const animalKorName = location.state.animalKoreanName
+  const animalEngName = location.state.animalEnglishName
+  const animalNowItem = location.state.animalNowItem
 
   function changeSelectImg(imgLink) {
     setSelectImg(imgLink)
@@ -47,7 +50,11 @@ const Minting = () => {
 
   const minting = async function () {
     setLoading(true)
-    const result = await IPFS.createToken(animalName, animalDesc, selectImg)
+    const result = await IPFS.createToken(
+      animalKorName + "#" + animalNowItem,
+      animalDesc,
+      selectImg,
+    )
     setLoading(false)
 
     console.log(result)
