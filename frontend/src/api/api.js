@@ -33,6 +33,7 @@ const api = {
         const res = await axios({
           url: HOST + USER + "/logout",
           method: "GET",
+          withCredentials: true,
         })
         return res.data
       } catch (error) {
@@ -46,6 +47,7 @@ const api = {
         const res = await axios({
           url: HOST + USER + "/test-result",
           method: "PUT",
+          withCredentials: true,
           data: {
             list: testResult,
           },
@@ -63,6 +65,7 @@ const api = {
         const res = await axios({
           url: HOST + USER + "/test-result",
           method: "GET",
+          withCredentials: true,
         })
         return res.data
       } catch (error) {
@@ -106,6 +109,7 @@ const api = {
         const res = await axios({
           url: HOST + DONATION,
           method: "POST",
+          withCredentials: true,
           data: {
             donationAmount: donationAmount,
             donationStatusCode: donationStatusCode,
@@ -126,6 +130,7 @@ const api = {
         const res = await axios({
           url: HOST + DONATION,
           method: "GET",
+          withCredentials: true,
         })
         const data = res.data
         return data
@@ -150,6 +155,7 @@ const api = {
         const res = await axios({
           url: HOST + SALE,
           method: "POST",
+          withCredentials: true,
           data: {
             saleContractAddress: saleContractAddress,
             saleCashContractAddress: saleCashContractAddress,
@@ -170,6 +176,7 @@ const api = {
       try {
         const res = await axios({
           url: HOST + SALE,
+          withCredentials: true,
           method: "GET",
         })
         const data = res.data
@@ -185,6 +192,7 @@ const api = {
         const res = await axios({
           url: HOST + SALE,
           method: "PUT",
+          withCredentials: true,
           data: {
             saleId: saleId,
             saleBuyerAddress: saleBuyerAddress,
@@ -203,6 +211,7 @@ const api = {
         const res = await axios({
           url: HOST + SALE + `/${saleNumber}`,
           method: "GET",
+          withCredentials: true,
         })
         const response = res.data
         return response
@@ -217,6 +226,7 @@ const api = {
         const res = await axios({
           url: HOST + SALE + "/ex",
           method: "GET",
+          withCredentials: true,
         })
         const response = res.data
         return response
@@ -240,6 +250,7 @@ const api = {
       try {
         const res = await axios({
           url: HOST + ANIMAL,
+          withCredentials: true,
           method: "POST",
           data: {
             animalKoreanName: KoreanName,
@@ -263,6 +274,7 @@ const api = {
       try {
         const res = await axios({
           url: HOST + ANIMAL,
+          withCredentials: true,
           method: "GET",
         })
         const response = res.data
@@ -278,6 +290,7 @@ const api = {
         const res = await axios({
           url: HOST + ANIMAL + `/detail/${animalId}`,
           method: "GET",
+          withCredentials: true,
         })
         const response = res.data
         return response
@@ -292,6 +305,7 @@ const api = {
         const res = await axios({
           url: HOST + ANIMAL + `/name-list`,
           method: "GET",
+          withCredentials: true,
         })
         const response = res.data
         return response
@@ -306,6 +320,7 @@ const api = {
         const res = await axios({
           url: HOST + ANIMAL + `/my-list`,
           method: "GET",
+          withCredentials: true,
         })
         const response = res.data
         return response
@@ -331,6 +346,7 @@ const api = {
         const res = await axios({
           url: HOST + ITEM,
           method: "POST",
+          withCredentials: true,
           data: {
             donationId: donationId,
             itemImgUrl: ImgUrl,
@@ -353,6 +369,7 @@ const api = {
       try {
         const res = await axios({
           url: HOST + ITEM,
+          withCredentials: true,
           method: "PUT",
         })
         const response = res.data
@@ -369,6 +386,7 @@ const api = {
         const res = await axios({
           url: HOST + ITEM,
           method: "GET",
+          withCredentials: true,
           params: {
             type: type,
           },
