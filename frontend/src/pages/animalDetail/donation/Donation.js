@@ -1,27 +1,27 @@
-import * as React  from 'react';
+import * as React from "react"
 import { useState, useEffect } from "react"
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import { Button } from '@mui/material';
+import { styled } from "@mui/material/styles"
+import Grid from "@mui/material/Grid"
+import Paper from "@mui/material/Paper"
+import Typography from "@mui/material/Typography"
+import ButtonBase from "@mui/material/ButtonBase"
+import { Button } from "@mui/material"
 import CarouselImages from "../carousel/CarouselImages"
 import api from "api/api.js"
 import { useLocation } from "react-router-dom"
-import DetailInfo from '../detailInfo/DetailInfo';
+import DetailInfo from "../detailInfo/DetailInfo"
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
 import Web3 from "web3"
 import { Link, useNavigate } from "react-router-dom"
 import styles from './Donation.module.css'
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
-});
+const Img = styled("img")({
+  margin: "auto",
+  display: "block",
+  maxWidth: "100%",
+  maxHeight: "100%",
+})
 
 export default function Donation(props) {
   const MySwal = withReactContent(Swal)
@@ -32,18 +32,19 @@ export default function Donation(props) {
   const [balance, setBalance] = useState();
   const [myAccount, setMyAccount] = useState();
 
-  const getCurrentAccount = async() => {
+
+  const getCurrentAccount = async () => {
     try {
-      const currentAccounts = await web3.eth.getAccounts();
+      const currentAccounts = await web3.eth.getAccounts()
       // console.log(currentAccounts[0]);
       setMyAccount(currentAccounts[0]);
       const bal = await web3.eth.getBalance(currentAccounts[0]);
       // console.log(balance);
       setBalance(bal/Math.pow(10,18));
       // console.log(web3);
-      return currentAccounts[0];
+      return currentAccounts[0]
     } catch {
-      console.log("err");
+      console.log("err")
     }
   }
 
@@ -82,12 +83,11 @@ export default function Donation(props) {
               icon: 'warning',
             }).then((result) => {
             if(result.isConfirmed) {
-              console.log("sss");
               const send = async() => {
                 try {
                 // const myaccount = await web3.eth.getAccounts()
                 // 0.01 자리에 기부금이 들어갑니다
-                const sendEther = donation / 10 ** 18
+                const sendEther = parseInt(donation * 10 ** 18)
                 const response = await web3.eth.sendTransaction({
                   from: myAccount,
                   to: "0x9Af0415fD6879B159D2F5C59d1f05B66CFF84CAE",
@@ -95,22 +95,21 @@ export default function Donation(props) {
                 })
                     // response가 뜨기 전까지 로딩 돌리기 => response가 도착하면 로딩 끄고 민팅 페이지로 연결
                     // console.log(response)
+                    Swal.fire(
+                      '기부가 완료되었습니다.', '감사합니다. </br>많은 기부 부탁드립니다.</br>Minting 페이지로 넘어갑니다.', 'success'
+                      ).then(() =>
+                      navigate("/main/mypage", {
+                        state: {
+                          animalKoreanName: animalInfo.animalKoreanName,
+                          animalEnglishName: animalInfo.animalEnglishName,
+                          animalNowItem: animalInfo.animalNowItem,
+                          animalDesc: animalInfo.animalDesc,
+                        }}))
                   } catch (err) {
                     console.log(err);
                   }
                 }
                 send()
-
-              Swal.fire(
-                '기부 완료', '기부가 완료되었습니다.', 'success'
-                ).then(() =>
-                navigate("/main/mypage", {
-                  state: {
-                    animalKoreanName: animalInfo.animalKoreanName,
-                    animalEnglishName: animalInfo.animalEnglishName,
-                    animalNowItem: animalInfo.animalNowItem,
-                    animalDesc: animalInfo.animalDesc,
-                  }}))
             }
             else Swal.fire('기부 취소', '기부가 취소되었습니다.', 'error')
             });
@@ -128,29 +127,29 @@ export default function Donation(props) {
             })
                 // response가 뜨기 전까지 로딩 돌리기 => response가 도착하면 로딩 끄고 민팅 페이지로 연결
                 // console.log(response)
+                Swal.fire(
+                  '기부가 완료되었습니다.', '감사합니다. </br>많은 기부 부탁드립니다.</br>Minting 페이지로 넘어갑니다.', 'success'
+                  ).then(() =>
+                  navigate("/main/minting", {
+                    state: {
+                      animalKoreanName: animalInfo.animalKoreanName,
+                      animalEnglishName: animalInfo.animalEnglishName,
+                      animalNowItem: animalInfo.animalNowItem,
+                      animalDesc: animalInfo.animalDesc,
+                    }}))
               } catch (err) {
                 console.log(err);
               }
             }
             send()
-          Swal.fire(
-            '기부가 완료되었습니다.', '감사합니다. </br>많은 기부 부탁드립니다.</br>Minting 페이지로 넘어갑니다.', 'success'
-            ).then(() =>
-            navigate("/main/minting", {
-              state: {
-                animalKoreanName: animalInfo.animalKoreanName,
-                animalEnglishName: animalInfo.animalEnglishName,
-                animalNowItem: animalInfo.animalNowItem,
-                animalDesc: animalInfo.animalDesc,
-              }}))
         }
       } 
       else Swal.fire('진행 중단', '', 'error')
     })
   }
 
-  const [donation, setDonation] = useState(null);
-  
+  const [donation, setDonation] = useState(null)
+
   const onChangeAccount = (e) => {
     setDonation(
          e.target.value
@@ -165,12 +164,10 @@ export default function Donation(props) {
       setAnimalInfo(res.dto)
     })
 
-    getCurrentAccount();
+    getCurrentAccount()
   }, [])
 
-
   return (
-
       <Grid container spacing={2} colums={12}>
         <Grid item xs={6}>
           <CarouselImages animalImgs={animalInfo.animalImg} className={styles.pictureSize}></CarouselImages>
@@ -188,47 +185,46 @@ export default function Donation(props) {
                 현재 잔고 : {balance} SSF
               </Typography>
             <Grid item>
-              <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                  <input type="number" step="0.01" placeholder='기부금을 입력하세요' onChange={onChangeAccount}
-                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></input><br/>
-                  <Button onClick={infoClick}
-                    style={{
-                      cursor: "pointer",
-                    }}>
-                  기부하기</Button>
+              <Typography sx={{ cursor: "pointer" }} variant="body2">
+                <input
+                  type="number"
+                  step="0.01"
+                  placeholder="기부금을 입력하세요"
+                  onChange={onChangeAccount}
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                ></input>
+                <br />
+                <Button
+                  onClick={infoClick}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                >
+                  기부하기
+                </Button>
               </Typography>
-            </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-  );
+    </Grid>
+  )
 }
 
-
-
-
-
-
-
-
-
-
-
 // window.location = "/main/minting";
-          // <Link to={{
-          //   pathname : `/main/minting`,   // `/animal/defail/{this.state.animal_id}`
-          //   state : {
-          //     animalId : this.state.animalId,
-          //     animalKoreanName : this.state.animalKoreanName,
-          //     animalEnglishName : this.state.animalEnglishName,
-          //     animalScientificName : this.state.animalScientificName,
-          //     animalDesc : this.state.animalDesc,
-          //     animalMaxItem : this.state.animalMaxItem,
-          //     animalNowItem : this.state.animalNowItem,
-          //     animalImg : this.state.animalImg,
-          //     animalYn : this.state.animalYn,
-          //     animalEndangeredLevel : this.state.animalEndangeredLevel,
-          //     animalType : this.state.animalType
-          //   }
-          // }}></Link>
+// <Link to={{
+//   pathname : `/main/minting`,   // `/animal/defail/{this.state.animal_id}`
+//   state : {
+//     animalId : this.state.animalId,
+//     animalKoreanName : this.state.animalKoreanName,
+//     animalEnglishName : this.state.animalEnglishName,
+//     animalScientificName : this.state.animalScientificName,
+//     animalDesc : this.state.animalDesc,
+//     animalMaxItem : this.state.animalMaxItem,
+//     animalNowItem : this.state.animalNowItem,
+//     animalImg : this.state.animalImg,
+//     animalYn : this.state.animalYn,
+//     animalEndangeredLevel : this.state.animalEndangeredLevel,
+//     animalType : this.state.animalType
+//   }
+// }}></Link>
