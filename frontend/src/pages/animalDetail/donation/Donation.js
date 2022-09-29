@@ -6,7 +6,8 @@ import Paper from "@mui/material/Paper"
 import Typography from "@mui/material/Typography"
 import ButtonBase from "@mui/material/ButtonBase"
 import { Button } from "@mui/material"
-import CarouselImages from "../carousel/CarouselImages"
+// import CarouselImages from "../carousel/CarouselImages"
+import CarouselImages from "./CarouselImages"
 import api from "api/api.js"
 import { useLocation } from "react-router-dom"
 import DetailInfo from "../detailInfo/DetailInfo"
@@ -170,23 +171,24 @@ export default function Donation(props) {
   return (
       <Grid container spacing={2} colums={12}>
         <Grid item xs={6}>
-          <CarouselImages animalImgs={animalInfo.animalImg} className={styles.pictureSize}></CarouselImages>
+          <CarouselImages animalImgs={animalInfo.animalImg}></CarouselImages>
         </Grid>
         <Grid item xs={6} sm container>
           <Grid item xs container direction="column" spacing={2}>
             <Grid item><br/>
               <Typography variant="subtitle1" component="div" color="black">
-                당신은 {animalInfo.animalKoreanName} 의 생존을 위해 기부하시려 합니다.<br />
-                현재 {animalInfo.animalMaxItem - animalInfo.animalNowItem}개의 NFT가 남아 있습니다.<br/>
-                NFT를 얻을 수 있는 최소 금액은 0.01 SSF입니다.<br/>
+                당신은 {animalInfo.animalKoreanName}의 생존을 위해 기부하시려 합니다.<br />
+                현재 {animalInfo.animalMaxItem - animalInfo.animalNowItem}개의 NFT가 남아 있습니다.<br/><br />
+                NFT를 얻을 수 있는 최소 금액은 <br/> 0.01 RopstenETH입니다.<br/>
                 </Typography>
                 <br/>
                 <Typography variant="body2" gutterBottom color="text.secondary">
-                현재 잔고 : {balance} SSF
-              </Typography>
+                현재 잔고 : {balance} RopstenETH
+              </Typography><br/>
             <Grid item>
               <Typography sx={{ cursor: "pointer" }} variant="body2">
                 <input
+                  className={styles.input}
                   type="number"
                   step="0.01"
                   placeholder="기부금을 입력하세요"
@@ -194,14 +196,15 @@ export default function Donation(props) {
                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 ></input>
                 <br />
-                <Button
+                <button
+                  className={styles.button}
                   onClick={infoClick}
                   style={{
                     cursor: "pointer",
                   }}
                 >
                   기부하기
-                </Button>
+                </button>
               </Typography>
             </Grid>
           </Grid>
