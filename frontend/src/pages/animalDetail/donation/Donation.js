@@ -36,7 +36,7 @@ export default function Donation(props) {
       // console.log(currentAccounts[0]);
       const bal = await web3.eth.getBalance(currentAccounts[0]);
       // console.log(balance);
-      setBalance(bal);
+      setBalance(bal/Math.pow(10,18));
       // console.log(web3);
       return currentAccounts[0];
     } catch {
@@ -73,7 +73,7 @@ export default function Donation(props) {
         else if(donation<0.01){
           Swal.fire('최소 기부금 미달', '기부금은 0.01SSF 이상 가능합니다.<br />충전 후 기부해주세요.', 'error')
         }
-        else if(animalInfo.animalNowItem===0){
+        else if((animalInfo.animalMaxItem - animalInfo.animalNowItem)===0){
           Swal.fire('남아있는 NFT 기부 증서가 없습니다.', '기부 증서 없이 기부만 하시겠습니까?.', 'question')
         }
         else {
@@ -119,7 +119,7 @@ export default function Donation(props) {
             <Grid item><br/>
               <Typography variant="subtitle1" component="div" color="black">
                 당신은 {animalInfo.animalKoreanName} 의 생존을 위해 기부하시려 합니다.<br />
-                현재{animalInfo.animalNowItem}개의 NFT가 남아 있습니다.<br/>
+                현재 {animalInfo.animalMaxItem - animalInfo.animalNowItem}개의 NFT가 남아 있습니다.<br/>
                 NFT를 얻을 수 있는 최소 금액은 0.01 SSF입니다.<br/>
                 </Typography>
                 <br/>
