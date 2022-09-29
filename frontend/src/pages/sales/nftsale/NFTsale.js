@@ -98,7 +98,7 @@ export default function NFTsale() {
           <Grid container spacing={3}>
             {data.currentData().map((data, idx) => (
               <Grid item key={idx} xs={12} sm={6} md={3}>
-                <NFTCard animalData={data}></NFTCard>
+                {/* <NFTCard animalData={data}></NFTCard> */}
               </Grid>
             ))}
           </Grid>
