@@ -19,3 +19,7 @@ a:hover {
 a:active {
   color : rgb(176, 164, 182)
 }
+
+p:hover {
+  color : rgb(206, 118, 213);
+}

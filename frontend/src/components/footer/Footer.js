@@ -31,11 +31,16 @@ export default function Footer() {
               Pages
             </p>
             <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0' }}>
-              <a href="/main">Main Page</a><br/>
-              <a href="/main/express">Expression Page</a><br/>
-              <a href="/main/animalList">Animal List Page</a><br/>
-              <a href="/main/sale">Animal Sale Page</a><br/>
-              <a href="/main/mypage">My Page</a><br/>
+              {/* <a href="/main">Main Page</a><br/> */}
+              {/* <a href="/main/express">Expression Page</a><br/> */}
+              {/* <a href="/main/animalList">Animal List Page</a><br/> */}
+              {/* <a href="/main/sale">Animal Sale Page</a><br/> */}
+              {/* <a href="/main/mypage">My Page</a><br/> */}
+              <p>Main Page</p>
+              <p>Expression Page</p>
+              <p>Animal List Page</p>
+              <p>Animal Sale Page</p>
+              <p>My Page</p>
             </CDBBox>
           </CDBBox>
           <CDBBox className={styles.write}>
