@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.css'
 
 export default function Footer() {
+
+  const e = {
+    
+  }
   return (
     // <CDBFooter className="shadow"> 
     <CDBFooter className={styles.bg}> 
@@ -36,11 +40,11 @@ export default function Footer() {
               {/* <a href="/main/animalList">Animal List Page</a><br/> */}
               {/* <a href="/main/sale">Animal Sale Page</a><br/> */}
               {/* <a href="/main/mypage">My Page</a><br/> */}
-              <p>Main Page</p>
-              <p>Expression Page</p>
-              <p>Animal List Page</p>
-              <p>Animal Sale Page</p>
-              <p>My Page</p>
+              <e>Main Page</e><br/>
+              <e>Expression Page</e><br/>
+              <e>Animal List Page</e><br/>
+              <e>Animal Sale Page</e><br/>
+              <e>My Page</e><br/><br/>
             </CDBBox>
           </CDBBox>
           <CDBBox className={styles.write}>
