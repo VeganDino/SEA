@@ -76,6 +76,7 @@ contract SaleToken is Ownable{
         popSaleToken(_tokenId);
     }
  
+    //등록된 NFT의 판매를 취소하고 싶을 때 사용한다.
     function cancelSaleToken(uint _tokenId) public {
     
         address tokenOwner = Token.ownerOf(_tokenId);
@@ -89,7 +90,7 @@ contract SaleToken is Ownable{
         tokenPrices[_tokenId] = 0;
         popSaleToken(_tokenId);
     }
- 
+    //tokenId값에 해당하는 요소를 삭제한다.
     function popSaleToken(uint _tokenId) private returns (bool) {
         for (uint i = 0; i < SaleTokenList.length; i++) {
             if (SaleTokenList[i] == _tokenId) {
