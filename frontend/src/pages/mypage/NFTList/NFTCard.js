@@ -9,7 +9,7 @@ export default function NFTCard(props) {
     endangered: props.NFTData.animalEndangeredLevel,
     animalName: props.NFTData.animalKoreanName,
   }
-  //console.log(NFTdata.img)
+  //console.log(NFTdata.img) 
 
   const NFTClick = () => {
     Swal.fire({
