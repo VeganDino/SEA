@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import { useLocation , useNavigate} from "react-router-dom"
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import NFTCard from 'pages/mypage/NFTList/NFTCard';
+import NFTCard from './NFTCard';
 import { useState, useEffect  } from "react"
 import { Pagination, Typography  } from "@mui/material"
 import usePagination from "components/pagination/Pagination"
@@ -20,16 +21,24 @@ export default function NFTsale() {
   
   const MySwal = withReactContent(Swal)
   const [allData, setAllData] = useState([])
-  const [page, setPage] = useState(1) // 처음 페이지는 1이다.
+  const [page, setPage] = useState(1)
   const PER_PAGE = 4
   const count = Math.ceil(allData.length / PER_PAGE)
   const data = usePagination(allData, PER_PAGE)
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [salePrice, setSalePrice] = useState(null)
+  const location = useLocation()
+  const [selectImg, setSelectImg] = useState("")
+  
 
   const handleChange = (e, p) => {
     setPage(p)
     data.jump(p)
+  }
+
+  function changeSelectImg(imgLink) {
+    setSelectImg(imgLink)
   }
 
   const saleClick = () => {
@@ -42,13 +51,11 @@ export default function NFTsale() {
             icon: 'warning'
     }).then((result) => {
       if (result.isConfirmed) {
-          Swal.fire('판매가 완료되었습니다.', '판매 리스트에 올라갑니다. </br>많은 판매 부탁드립니다.', 'success');
+          Swal.fire('판매가 완료되었습니다.', '판매 리스트에 올라갑니다. </br>많은 판매 부탁드립니다.', 'success')
       } else
           Swal.fire('진행 중단', '', 'error')
     })
   }
-
-  const [salePrice, setSalePrice] = useState(null)
 
   const onChangeAccount = (e) => {
     setSalePrice(
@@ -69,6 +76,7 @@ export default function NFTsale() {
     data.setNewData(allData)
     return () => {}
   }, [allData, data])
+
   
   return (
       <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
@@ -107,7 +115,6 @@ export default function NFTsale() {
                   onChange={onChangeAccount}
                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 ></input>
-              
               ETH
               {/* <img
                   src={require("resources/img/logo/ethereumLogo.png")}
@@ -154,39 +161,5 @@ export default function NFTsale() {
             </Grid>
         </Box>
       </Box>
-
-
-      // <div>
-      //     <Grid container spacing={2}>
-      //       <Grid xs={12}>
-      //         <Grid container spacing={3}>
-      //           {data.currentData().map((data, idx) => (
-      //             <Grid item key={idx} xs={12} sm={6} md={3}>
-      //             <NFTCard NFTData={data}></NFTCard>
-      //             </Grid>
-      //           ))}
-      //         </Grid>
-      //         <Pagination
-      //             count={count}
-      //             page={page}
-      //             color="primary"
-      //             size="large"
-      //             sx={{
-      //               margin: 2,
-      //               display: "inline-block",
-      //             }}
-      //             onChange={handleChange}
-      //           />
-      //           </Grid>
-
-      //       <Grid xs={6}>
-      //         <Item>xs=4</Item>
-      //       </Grid>
-      //       <Grid xs={6}>
-      //         <Item>xs=8</Item>
-      //       </Grid>
-      //     </Grid>
-
-      // </div>
   );
 }
