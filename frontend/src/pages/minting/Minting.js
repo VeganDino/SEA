@@ -97,7 +97,6 @@ const Minting = () => {
     initiating()
     // }, [account, contract])
   }, [account])
-  const [flag, setFlag] = useState(true)
   const minting = async function () {
     try {
       if (selectImg === "") {
@@ -125,46 +124,45 @@ const Minting = () => {
           const myAbi = JSON.stringify(abi.abi)
           // const myAbi = abi.abi
           // 컨트랙트 생성
-          const contract = new web3.eth.Contract(JSON.parse(myAbi))
-            .deploy({
-              data: myBytecode,
-              // 여기 동물 이름을 인자로 받는, Contract 디플로이
-              arguments: [animalKorName, result],
-            })
-            .send({
-              from: account,
-            })
-            .then(async (response) => {
-              // 민팅
-              let imageUrl = ""
-              const getIpfsImage = await axios.get(result).then((res) => {
-                const ipfsImage = res.data.image.slice(7)
-                imageUrl = "https://ipfs.io/ipfs/" + ipfsImage
-              })
-              console.log(imageUrl)
-              const address = response["_address"]
-              const resFromEth = await response.methods
-                .mintToken()
-                .send({ from: account })
-              const resFromServer = await api.item.registerItem(
-                account,
-                donationId,
-                imageUrl,
-                address
-              )
-              setLoading(false)
-              Swal.fire({
-                icon: "success",
-                title: "NFT 발급 성공!",
-                text: "확인을 누르시면 마이페이지로 이동합니다",
-              }).then(() => {
-                navigate("/main/mypage")
-              })
-            })
+          const contract = new web3.eth.Contract(JSON.parse(myAbi)).deploy({
+            data: myBytecode,
+            // 여기 동물 이름을 인자로 받는, Contract 디플로이
+            arguments: [animalKorName, result],
+          })
+          const firstResponse = await contract.send({
+            from: account,
+          })
+          // 민팅
+          let imageUrl = ""
+          const getIpfsImage = await axios.get(result)
+
+          const ipfsImage = getIpfsImage.data.image.slice(7)
+          imageUrl = "https://ipfs.io/ipfs/" + ipfsImage
+          console.log(ipfsImage)
+          console.log(imageUrl)
+          const address = firstResponse["_address"]
+          console.log(address)
+          const resFromEth = await firstResponse.methods
+            .mintToken()
+            .send({ from: account })
+          console.log(resFromEth)
+          const resFromServer = await api.item.registerItem(
+            account,
+            donationId,
+            imageUrl,
+            address
+          )
+          setLoading(false)
+          Swal.fire({
+            icon: "success",
+            title: "NFT 발급 성공!",
+            text: "확인을 누르시면 마이페이지로 이동합니다",
+          }).then(() => {
+            navigate("/main/mypage")
+          })
         }
       }
     } catch (error) {
-      console.log(error)
       Swal.fire({
         icon: "error",
         title: "오류 발생!",
@@ -173,8 +171,6 @@ const Minting = () => {
       })
       setLoading(false)
     }
-
-    // 이 이후에 result값을 web3로 토큰 값으로 넘기면 됩니다.
   }
 
   return (
