@@ -120,6 +120,7 @@ const Minting = () => {
             animalDesc,
             selectImg
           )
+          console.log(result)
           const web3 = window.web3
           const myBytecode = "0x" + bytecode.object
           const myAbi = JSON.stringify(abi.abi)
