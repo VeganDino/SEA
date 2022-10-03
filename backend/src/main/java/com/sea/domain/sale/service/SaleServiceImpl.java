@@ -53,7 +53,7 @@ public class SaleServiceImpl implements SaleService {
 
 	@Override
 	public List<SaleDto> getSaleList() {
-		long now = Date.valueOf(LocalDate.now().plusDays(1)).getTime();
+		long now = Date.valueOf(LocalDate.now()).getTime();
 		List<Sale> sales = saleRepository.findBySaleYnAndSaleEndTimeMoreThan(0, now).orElse(new ArrayList<>());
 		List<SaleDto> list = new ArrayList<SaleDto>();
 		for (Sale sale : sales) {
@@ -82,7 +82,7 @@ public class SaleServiceImpl implements SaleService {
 
 	@Override
 	public List<SaleDto> getMySaleList(String userWalletAddress) {
-		long now = Date.valueOf(LocalDate.now().plusDays(1)).getTime();
+		long now = Date.valueOf(LocalDate.now()).getTime();
 		
 		List<Sale> sales = saleRepository.findBySaleSellerAddressAndSaleYnAndSaleEndTimeMoreThan(userWalletAddress, 1, now).orElse(null);
 		List<SaleDto> list = new ArrayList<SaleDto>();
