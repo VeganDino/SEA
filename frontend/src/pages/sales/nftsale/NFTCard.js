@@ -14,7 +14,8 @@ export default function NFTCard(props) {
   }
 
   function clicked() {
-    props.setSelectImg(NFTdata.img)
+    // props.setSelectImg(NFTdata.img)
+    props.getNFTdata(NFTdata)
   }
 
   useEffect(() => {
