@@ -223,7 +223,7 @@ export default function NFTsale() {
               selected={endDate}
               onChange={(date) => setEndDate(date)}
               selectsEnd
-              endDate={endDate.setHours(23,59,0,0)}
+              endDate={endDate.setHours(23,59,59,59)}
               minDate={startDate}
               locale={ko}
             />
