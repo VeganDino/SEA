@@ -66,10 +66,9 @@ export default function Menu(props) {
           ))}
         </Select>
       </FormControl>
-      <Button variant="contained" >판매내역</Button>
+      {/* <Button variant="contained" >판매내역</Button> */}
       <Button variant="contained" onClick={openModal1} >판매하기</Button>
       <Modal open={modalOpen1} close={closeModall} header="판매하기"><NFTsale /></Modal>
-
 
       <Modal open={modalOpen2} close={closeModal2} header="구매하기">구매</Modal>
     </Stack>

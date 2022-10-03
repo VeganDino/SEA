@@ -1,19 +1,16 @@
-// export default function NFTsale() {
-//     return (
-//         <></>
-//     )
-// }
-
 import { useState, useEffect } from "react"
 import { styled } from "@mui/material/styles"
+import { useLocation, useNavigate } from "react-router-dom"
 import Grid from "@mui/material/Grid"
 import Paper from "@mui/material/Paper"
 import Typography from "@mui/material/Typography"
 import ButtonBase from "@mui/material/ButtonBase"
-import { Button } from "@mui/material"
+import styles from "./NFTPurchase.module.css"
+import withReactContent from "sweetalert2-react-content"
 import api from "api/api"
 import Swal from "sweetalert2"
-
+import Web3 from "web3"
+import abi from "../../../abis/transaction/abi.json"
 const Img = styled("img")({
   margin: "auto",
   display: "block",
@@ -23,6 +20,73 @@ const Img = styled("img")({
 
 export default function ComplexGrid(props) {
   const [saleData, setSaleData] = useState({})
+  const [balance, setBalance] = useState()
+  const [myAccount, setMyAccount] = useState()
+  const web3 = new Web3(window.ethereum)
+  const MySwal = withReactContent(Swal)
+  const navigate = useNavigate()
+
+  const getCurrentAccount = async () => {
+    try {
+      const currentAccounts = await web3.eth.getAccounts()
+      setMyAccount(currentAccounts[0])
+      const bal = await web3.eth.getBalance(currentAccounts[0])
+      setBalance(bal / Math.pow(10, 18))
+      return currentAccounts[0]
+    } catch {
+      console.log("err")
+    }
+  }
+
+  const infoClick = async () => {
+    try {
+      const swalResponse = await MySwal.fire({
+        title: <p>{saleData.animalKoreanName} NFT를 구매하시겠습니까?</p>,
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: "OK",
+        cancelButtonText: "Cancel",
+        icon: "warning",
+      })
+      if (swalResponse.isConfirmed) {
+        console.log(myAccount)
+        const traderAddress = saleData.saleContractAddress
+        const salePrice = saleData.salePrice
+        console.log("앙냥")
+        console.log(saleData)
+        const functionABI = new web3.eth.Contract(abi, traderAddress).methods
+          .PurchaseToken(1)
+          .encodeABI()
+        console.log(functionABI)
+
+        const contract = await web3.eth.sendTransaction({
+          from: myAccount,
+          to: traderAddress,
+          value: (salePrice * 10 ** 18).toString(),
+          data: functionABI,
+        })
+
+        console.log(contract)
+        const saleId = saleData.saleId
+
+        const responseFinishSale = await api.sale.saleSuccess(saleId, myAccount)
+        console.log(responseFinishSale)
+
+        const itemId = saleData.itemId
+        const itemPrice = salePrice
+        const itemOwnerAddress = myAccount
+        const responseChangeInfo = await api.item.changeItem(
+          itemId,
+          itemPrice,
+          itemOwnerAddress
+        )
+        console.log(responseChangeInfo)
+        console.log("끝?")
+      } else if (swalResponse.isDismissed) {
+        console.log("옴뇸뇸")
+      }
+    } catch (error) {}
+  }
 
   const NFTClick = () => {
     Swal.fire({
@@ -47,6 +111,7 @@ export default function ComplexGrid(props) {
     }
 
     getSaleData()
+    getCurrentAccount()
   }, [])
   return (
     <Grid container spacing={2}>
@@ -81,13 +146,21 @@ export default function ComplexGrid(props) {
             </Grid>
             <Grid sx={{ marginTop: "7rem" }}>
               <Typography variant="body1" color="text.secondary">
-                금액 : {saleData.salePrice} eth
+                NFT 구매 금액 : {saleData.salePrice} eth
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                현재 잔고 : 55 eth (변수 처리해주세요)
+                현재 잔고 : {Math.round(balance * 10000000) / 10000000} ETH
               </Typography>
               <Grid sx={{ marginTop: "3rem" }} item>
-                <Button variant="contained">구매하기</Button>
+                <button
+                  className={styles.button}
+                  onClick={infoClick}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                >
+                  구매하기
+                </button>
               </Grid>
             </Grid>
           </Grid>
