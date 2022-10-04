@@ -31,7 +31,7 @@ public class SaleServiceImpl implements SaleService {
 
 		Item item = itemRepository.findById(registerInfo.getItemId()).get();
 
-		Optional<Sale> optional = saleRepository.findByItemIdAndSaleSellerAddress(item, registerInfo.getWalletAddres());
+		Optional<Sale> optional = saleRepository.findByFkItemIdAndSaleSellerAddress(item, registerInfo.getWalletAddres());
 
 		if (optional.isPresent()) {
 			saleRepository.delete(optional.get());
