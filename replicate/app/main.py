@@ -44,7 +44,7 @@ if __name__ == '__main__':
                 host="0.0.0.0",
                 port=8000,
                 reload=True,
-                ssl_keyfile="./letsencrypt/privkey.pem",
+                ssl_keyfile="/code/letsencrypt/privkey1.pem",
                 ssl_keyfile_password="ssafy506", 
-                ssl_certfile="./letsencrypt/cert.pem"
+                ssl_certfile="/code/letsencrypt/cert1.pem"
                 )
