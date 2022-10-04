@@ -12,10 +12,7 @@ app = FastAPI()
 # os.environ["REPLICATE_API_TOKEN"] = envDict['REPLICATE_API_TOKEN']
 
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
-    "http://j7a506.p.ssafy.io",
-    "http://j7a506.p.ssafy.io:3000"
+    "*"
 ]
 
 app.add_middleware(
