@@ -38,12 +38,3 @@ async def root(item_id):
         output_url[3]]
     }
     return response
-
-if __name__ == '__main__':
-    uvicorn.run("app.main:app",
-                host="0.0.0.0",
-                port=8432,
-                reload=True,
-                ssl_keyfile="./privatekey1.pem", 
-                ssl_certfile="./cert1.pem"
-                )
