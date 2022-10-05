@@ -94,7 +94,10 @@ export default function ComplexGrid(props) {
           title: "구매 완료!",
           text: "구매가 완료되었습니다!",
           confirmButtonText: "확인",
-        })
+        }).then(() => 
+        window.location.replace("/main/mypage")
+      )
+    
       } else if (swalResponse.isDismissed) {
         console.log("옴뇸뇸")
       }
@@ -150,8 +153,9 @@ export default function ComplexGrid(props) {
       setSaleData(result.sale)
     }
 
-    getSaleData()
+    getSaleData() 
     getCurrentAccount()
+
   }, [])
   return (
     <Grid container spacing={2}>
