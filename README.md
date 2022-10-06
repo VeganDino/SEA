@@ -166,7 +166,7 @@
 
 | NFT 판매                             |
 |:----------------------------------:|
-| <img src="이미지 url" alt="NFT 판매" width="700px" /> |
+| <img src="/uploads/4c778adc8735b2bde2d6846bd9f22402/판매.gif" alt="NFT 판매" width="700px" /> |
 | <img src="/uploads/8ae3ab27ee83cff6c92c3814af2c189f/판매취소하기.gif" alt="판매 취소" width="700px" /> |
 
 ### NFT 구매
