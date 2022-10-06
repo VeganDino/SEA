@@ -171,7 +171,7 @@
         <td height="140px" align="center"> <a href="https://github.com/깃허브 링크">
             <img src="./assets/이종인.png" width="140px" /> <br><br> 😆 이종인 <br>(Front-End) </a> <br></td>
         <td height="140px" align="center"> <a href="https://github.com/SilverLight96">
-            <img src="./assets/강경은.png" width="140px" /> <br><br> 😁 강경은 <br>(Back-End) </a> <br></td>
+            <img src="/uploads/6bfddce2423347150f7c14a1a5cb88e4/강경은.png" width="140px" /> <br><br> 😁 강경은 <br>(Back-End) </a> <br></td>
         <td height="140px" align="center"> <a href="https://github.com/kkh9700">
             <img src="./assets/김경환.png" width="140px" /> <br><br> 😶 김경환 <br>(Back-End) </a> <br></td>
     </tr>
