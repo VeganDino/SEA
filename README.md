@@ -60,3 +60,31 @@
 <br>
 <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <img src="https://img.shields.io/badge/GitLab-FCA121?style=for-the-badge&logo=GitLab&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/> <br/>
+
+<details><summary> <b> 상세 기술스택 및 버전</b> </summary>
+
+| 구분       | 기술스택                    | 상세내용                 | 버전          |
+| -------- | ----------------------- | -------------------- | ----------- |
+| 공통     | 형상관리                 | Gitlab               | \-          |
+|          | 이슈관리                 | Jira                 | \-          |
+|          | 커뮤니케이션             | Mattermost, Notion   | \-          |
+| BackEnd  | DB                      | MySQL                | 5.7         |
+|          |                         | JPA                  | \-          |
+|          | Java                    | Zulu                 | 8.33.0.1    |
+|          | Spring                  | Spring               | 5.3.6       |
+|          |                         | Spring Boot          | 2.4.5       |
+|          | IDE                     | IntelliJ             | 2022.1.3    |
+|          | Cloud Storage           | AWS S3               | \-          |
+|          | Build                   | Gradle               | 7.3.2       |
+|          | API Docs                | Postman              |             |
+| SmartContract |                    | Solidity             | ^0.8.4      |
+|          | IDE                     | Remix                | 0.26.3      |
+| FrontEnd | HTML5                   |                      | \-          |
+|          | CSS3                    |                      | \-          |
+|          | JavaScript(ES6)         |                      |\-           |
+|          | React                   | React                | 17.0.0      |
+|          | IDE                     | Visual Studio Code   | 1.70.0      |
+| Server   | 서버                    | AWS EC2              | \-          |
+|          | 플랫폼                  | Ubuntu               | 20.04.3 LTS |
+|          | CI/CD                   | Docker               | 20.10.17    |
+|          |                         | Jenkins              | 2.361.1     |
