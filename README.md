@@ -56,6 +56,9 @@
 <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <br>
 
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <img src="https://img.shields.io/badge/Node.js-339939?style=for-the-badge&logo=Node.js&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <img src="https://img.shields.io/badge/Web3.js-F16822?style=for-the-badge&logo=Web3.js&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
@@ -86,9 +89,11 @@
 |               | CSS3            |                    | \-          |
 |               | JavaScript(ES6) |                    | \-          |
 |               | React           | React              | 17.0.0      |
+|               | Node.js         |                    | 16.17.0     |
+|               | Web3.js         |                    | ^1.8.0      |
 |               | IDE             | Visual Studio Code | 1.70.0      |
-| Server        | 서버              | AWS EC2            | \-          |
-|               | 플랫폼             | Ubuntu             | 20.04.3 LTS |
+| Server        | 서버            | AWS EC2            | \-          |
+|               | 플랫폼          | Ubuntu             | 20.04.3 LTS |
 |               | CI/CD           | Docker             | 20.10.17    |
 |               |                 | Jenkins            | 2.361.1     |
 
