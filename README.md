@@ -1,4 +1,5 @@
 # 특화프로젝트
+
 <div align="center">
   <br />
   <img src="/uploads/db0e281172599cf15f744dff6ec7031d/sea.png" alt="Save Endangered Animal" />
@@ -21,7 +22,6 @@
 
 <br/>
 
-
 <div id="1"></div>
 
 ## 💡 서비스 소개
@@ -29,8 +29,9 @@
 ### 서비스 모토
 
 > 서비스 소개
->
+
 #### 서비스에 대한 한마디
+
 <br/>
 
 <div id="2"></div>
@@ -63,31 +64,32 @@
 
 <details><summary> <b> 상세 기술스택 및 버전</b> </summary>
 
-| 구분       | 기술스택                    | 상세내용                 | 버전          |
-| -------- | ----------------------- | -------------------- | ----------- |
-| 공통     | 형상관리                 | Gitlab               | \-          |
-|          | 이슈관리                 | Jira                 | \-          |
-|          | 커뮤니케이션             | Mattermost, Notion   | \-          |
-| BackEnd  | DB                      | MySQL                | 5.7         |
-|          |                         | JPA                  | \-          |
-|          | Java                    | Zulu                 | 8.33.0.1    |
-|          | Spring                  | Spring               | 5.3.6       |
-|          |                         | Spring Boot          | 2.4.5       |
-|          | IDE                     | IntelliJ             | 2022.1.3    |
-|          | Cloud Storage           | AWS S3               | \-          |
-|          | Build                   | Gradle               | 7.3.2       |
-|          | API Docs                | Postman              |             |
-| SmartContract |                    | Solidity             | ^0.8.4      |
-|          | IDE                     | Remix                | 0.26.3      |
-| FrontEnd | HTML5                   |                      | \-          |
-|          | CSS3                    |                      | \-          |
-|          | JavaScript(ES6)         |                      |\-           |
-|          | React                   | React                | 17.0.0      |
-|          | IDE                     | Visual Studio Code   | 1.70.0      |
-| Server   | 서버                    | AWS EC2              | \-          |
-|          | 플랫폼                  | Ubuntu               | 20.04.3 LTS |
-|          | CI/CD                   | Docker               | 20.10.17    |
-|          |                         | Jenkins              | 2.361.1     |
+| 구분            | 기술스택            | 상세내용               | 버전          |
+| ------------- | --------------- | ------------------ | ----------- |
+| 공통            | 형상관리            | Gitlab             | \-          |
+|               | 이슈관리            | Jira               | \-          |
+|               | 커뮤니케이션          | Mattermost, Notion | \-          |
+| BackEnd       | DB              | MySQL              | 5.7         |
+|               |                 | JPA                | \-          |
+|               | Java            | Zulu               | 8.33.0.1    |
+|               | Spring          | Spring             | 5.3.6       |
+|               |                 | Spring Boot        | 2.4.5       |
+|               | IDE             | IntelliJ           | 2022.1.3    |
+|               | Cloud Storage   | AWS S3             | \-          |
+|               | Build           | Gradle             | 7.3.2       |
+|               | API Docs        | Postman            |             |
+| SmartContract |                 | Solidity           | ^0.8.4      |
+|               | IDE             | Remix              | 0.26.3      |
+| FrontEnd      | HTML5           |                    | \-          |
+|               | CSS3            |                    | \-          |
+|               | JavaScript(ES6) |                    | \-          |
+|               | React           | React              | 17.0.0      |
+|               | IDE             | Visual Studio Code | 1.70.0      |
+| Server        | 서버              | AWS EC2            | \-          |
+|               | 플랫폼             | Ubuntu             | 20.04.3 LTS |
+|               | CI/CD           | Docker             | 20.10.17    |
+|               |                 | Jenkins            | 2.361.1     |
+
 </details>
 
 <br />
@@ -96,10 +98,9 @@
 
 ## 🗂️ 시스템 아키텍처
 
-|                              시스템 구성                           |
-| :------------------------------------------------------------------------------: |
+| 시스템 구성                                                       |
+|:------------------------------------------------------------:|
 | ![image](/uploads/e1c169d90d2a64ea1ca0db3ab873b999/아키텍쳐.png) |
-
 
 <br />
 
@@ -108,68 +109,72 @@
 ## 🖥️ 주요기능
 
 ### 주요 기능 1
+
 - 기능 설명 1
 - 기능 설명 2
 - 기능 설명 3
 
-|                              주요기능 1                                     |
-| :---------------------------------------------------------------------------: |
-|  <img src="이미지 url" alt="주요기능 1" />                |
+| 주요기능 1                             |
+|:----------------------------------:|
+| <img src="이미지 url" alt="주요기능 1" /> |
 
 ### 주요 기능 2
+
 - 기능 설명 1
 - 기능 설명 2
 - 기능 설명 3
 
-|                              주요기능 2                                     |
-| :---------------------------------------------------------------------------: |
-|  <img src="이미지 url" alt="주요기능 2" />                |
+| 주요기능 2                             |
+|:----------------------------------:|
+| <img src="이미지 url" alt="주요기능 2" /> |
 
 ### 주요 기능 3
+
 - 기능 설명 1
 - 기능 설명 2
 - 기능 설명 3
 
-|                              주요기능 3                                     |
-| :---------------------------------------------------------------------------: |
-|  <img src="이미지 url" alt="주요기능 3" />                |
+| 주요기능 3                             |
+|:----------------------------------:|
+| <img src="이미지 url" alt="주요기능 3" /> |
 
 <br/>
 
 <div id="5"></div>
 
-## 🎥 [UCC 보러가기](#) 
+## 🎥 [UCC 보러가기](https://youtu.be/m4tpFUsXdW0)
 
 <br />
 
-## 👥 협업 관리 
+## 👥 협업 관리
 
-|                            Jira BurnDown Chart                      |
-| :---------------------------------------------------------------------------: |
-|  <img src="/uploads/de0207b34e34600505f418c938df5e9b/번다운차트.PNG" />  |
+| Jira BurnDown Chart                                               |
+|:-----------------------------------------------------------------:|
+| <img src="/uploads/de0207b34e34600505f418c938df5e9b/번다운차트.PNG" /> |
 
-|                            Notion                      |
-| :---------------------------------------------------------------------------: |
-|  <img src="/uploads/b4440910464b9dd6946775f0a57c9c1d/API명세서.PNG" /><img src="/uploads/0b30656d36d9a334f9d4b8c315b4cfc5/회의록.PNG" />  |
+| Notion                                                                                                                            |
+|:---------------------------------------------------------------------------------------------------------------------------------:|
+| <img src="/uploads/b4440910464b9dd6946775f0a57c9c1d/API명세서.PNG" /><img src="/uploads/0b30656d36d9a334f9d4b8c315b4cfc5/회의록.PNG" /> |
 
 <br />
 
-## 👪 개발 멤버 소개 
+## 👪 개발 멤버 소개
+
 <table>
     <tr>
+        <td height="140px" align="center"> <a href="https://github.com/Cr-Mo-Marco-3000">
+            <img src="./assets/김현영.jpg" width="140px" /> <br><br> 👑 김현영 <br>(Front-End) </a> <br></td>
         <td height="140px" align="center"> <a href="https://github.com/깃허브 링크">
-            <img src="개인 사진" width="140px" /> <br><br> 👑 김현영 <br>(Front-End) </a> <br></td>
+            <img src="./assets/성성민.jpg" width="140px" /> <br><br> 🙂 성성민 <br>(Front-End) </a> <br></td>
         <td height="140px" align="center"> <a href="https://github.com/깃허브 링크">
-            <img src="개인 사진" width="140px" /> <br><br> 🙂 성성민 <br>(Front-End) </a> <br></td>
-        <td height="140px" align="center"> <a href="https://github.com/깃허브 링크">
-            <img src="개인 사진" width="140px" /> <br><br> 😆 이종인 <br>(Front-End) </a> <br></td>
+            <img src="./assets/이종인.jpg" width="140px" /> <br><br> 😆 이종인 <br>(Front-End) </a> <br></td>
         <td height="140px" align="center"> <a href="https://github.com/SilverLight96">
-            <img src="개인 사진" width="140px" /> <br><br> 😁 강경은 <br>(Back-End) </a> <br></td>
+            <img src="./assets/강경은.jpg" width="140px" /> <br><br> 😁 강경은 <br>(Back-End) </a> <br></td>
         <td height="140px" align="center"> <a href="https://github.com/kkh9700">
-            <img src="개인 사진" width="140px" /> <br><br> 😶 김경환 <br>(Back-End) </a> <br></td>
+            <img src="./assets/김경환.jpg" width="140px" /> <br><br> 😶 김경환 <br>(Back-End) </a> <br></td>
     </tr>
     <tr>
-        <td align="center">UI/UX<br/>React<br/></td>
+        <td align="center">UI/UX<br/>React<br/>Web3.js<br/>FastAPI</td>
         <td align="center">UI/UX<br/>React<br</td>
         <td align="center">UI/UX<br/>React</td>
         <td align="center">REST API<br/>Smart Contract<br/></td>
@@ -184,20 +189,23 @@
 <div id="8"></div>
 
 ## 📆 프로젝트 기간
+
 ### 22.8.22 ~ 22.10.7
-- 기획 및 설계 : 22.8.22 ~ 22.9.4
-- 프로젝트 구현 : 22.9.5 ~ 22.10.6
-- 버그 수정 및 산출물 정리 : 22.10.7
+
+- 기획 및 설계 : 22.8.22 ~ 22.9.09
+- 프로젝트 구현 : 22.9.12 ~ 22.9.30
+- 버그 수정 및 산출물 정리 : 22.10.03 ~ 22.10.07
 
 <br />
 
 <div id="9"></div>
 
 ## 📋 프로젝트 관련 문서
-|  구분  |  링크  |
-| :--------------- | :---------------: |
-| 와이어프레임 | [와이어프레임 바로가기](피그마 주소) |
-| ERD | [ERD 바로가기](ERD주소) |
-| 빌드/배포 | [빌드/배포 바로가기](빌드/배포 주소) |
-| 시연 시나리오 | [시연 시나리오 바로가기](시연시나리오 주소) |
-| 발표자료 | [발표자료 바로가기](발표자료 주소) |
+
+| 구분      | 링크                                                                                                                      |
+|:------- |:-----------------------------------------------------------------------------------------------------------------------:|
+| 와이어프레임  | [와이어프레임 바로가기](https://www.figma.com/file/6AqH2FhNiE8bfmz9ejHpCT/%ED%8A%B9%ED%99%94-5%EB%B0%98-6%EC%A1%B0?node-id=0%3A1) |
+| ERD     | [ERD 바로가기](https://www.erdcloud.com/d/cwdAmY6DuYgX46o2F)                                                                |
+| 빌드/배포   | [빌드/배포 바로가기](빌드/배포 주소)                                                                                                  |
+| 시연 시나리오 | [시연 시나리오 바로가기](시연시나리오 주소)                                                                                               |
+| 발표자료    | [발표자료 바로가기](발표자료 주소)                                                                                                    |
