@@ -20,18 +20,22 @@ export default function Menu(props) {
   const [modalOpen1, setModalOpen1] = useState(false)
   const openModal1 = () => {
     setModalOpen1(true)
+    document.body.style.overflow = "hidden";
   }
   const closeModall = () => {
     setModalOpen1(false)
+    document.body.style.overflow = "unset";
   }
 
   // 구매 하기 모달
   const [modalOpen2, setModalOpen2] = useState(false)
   const openModal2 = () => {
     setModalOpen2(true)
+    document.body.style.overflow = "hidden";
   }
   const closeModal2 = () => {
     setModalOpen2(false)
+    document.body.style.overflow = "unset";
   }
 
   //then 처리 내부
@@ -81,6 +85,7 @@ export default function Menu(props) {
           sx={{
             fontSize: "17px",
             fontWeight: 900,
+            lineHeight:"0.5rem"
           }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
