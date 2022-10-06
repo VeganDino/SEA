@@ -102,3 +102,102 @@
 
 
 <br />
+
+<div id="4"></div>
+
+## 🖥️ 주요기능
+
+### 주요 기능 1
+- 기능 설명 1
+- 기능 설명 2
+- 기능 설명 3
+
+|                              주요기능 1                                     |
+| :---------------------------------------------------------------------------: |
+|  <img src="이미지 url" alt="주요기능 1" />                |
+
+### 주요 기능 2
+- 기능 설명 1
+- 기능 설명 2
+- 기능 설명 3
+
+|                              주요기능 2                                     |
+| :---------------------------------------------------------------------------: |
+|  <img src="이미지 url" alt="주요기능 2" />                |
+
+### 주요 기능 3
+- 기능 설명 1
+- 기능 설명 2
+- 기능 설명 3
+
+|                              주요기능 3                                     |
+| :---------------------------------------------------------------------------: |
+|  <img src="이미지 url" alt="주요기능 3" />                |
+
+<br/>
+
+<div id="5"></div>
+
+## 🎥 [UCC 보러가기](#) 
+
+<br />
+
+## 👥 협업 관리 
+
+|                            Jira BurnDown Chart                      |
+| :---------------------------------------------------------------------------: |
+|  <img src="/uploads/de0207b34e34600505f418c938df5e9b/번다운차트.PNG" />  |
+
+|                            Notion                      |
+| :---------------------------------------------------------------------------: |
+|  <img src="api명세서 스샷" /><img src="회의록 스샷" />  |
+
+<br />
+
+## 👪 개발 멤버 소개 
+<table>
+    <tr>
+        <td height="140px" align="center"> <a href="https://github.com/깃허브 링크">
+            <img src="개인 사진" width="140px" /> <br><br> 👑 김현영 <br>(Front-End) </a> <br></td>
+        <td height="140px" align="center"> <a href="https://github.com/깃허브 링크">
+            <img src="개인 사진" width="140px" /> <br><br> 🙂 성성민 <br>(Front-End) </a> <br></td>
+        <td height="140px" align="center"> <a href="https://github.com/깃허브 링크">
+            <img src="개인 사진" width="140px" /> <br><br> 😆 이종인 <br>(Front-End) </a> <br></td>
+        <td height="140px" align="center"> <a href="https://github.com/SilverLight96">
+            <img src="개인 사진" width="140px" /> <br><br> 😁 강경은 <br>(Back-End) </a> <br></td>
+        <td height="140px" align="center"> <a href="https://github.com/kkh9700">
+            <img src="개인 사진" width="140px" /> <br><br> 😶 김경환 <br>(Back-End) </a> <br></td>
+    </tr>
+    <tr>
+        <td align="center">UI/UX<br/>React<br/></td>
+        <td align="center">UI/UX<br/>React<br</td>
+        <td align="center">UI/UX<br/>React</td>
+        <td align="center">REST API<br/>Smart Contract<br/></td>
+        <td align="center">REST API<br/>DB<br/>S3<br/>CI/CD<br/></td>
+    </tr>
+</table>
+
+<br />
+
+<div id="8"></div>
+
+<div id="8"></div>
+
+## 📆 프로젝트 기간
+### 22.8.22 ~ 22.10.7
+- 기획 및 설계 : 22.8.22 ~ 22.9.4
+- 프로젝트 구현 : 22.9.5 ~ 22.10.6
+- 버그 수정 및 산출물 정리 : 22.10.7
+
+<br />
+
+<div id="9"></div>
+
+## 📋 프로젝트 관련 문서
+|  구분  |  링크  |
+| :--------------- | :---------------: |
+| 와이어프레임 | [와이어프레임 바로가기](피그마 주소) |
+| ERD | [ERD 바로가기](ERD주소) |
+| 빌드/배포 | [빌드/배포 바로가기](빌드/배포 주소) |
+| 시연 시나리오 | [시연 시나리오 바로가기](시연시나리오 주소) |
+| 발표자료 | [발표자료 바로가기](발표자료 주소) |
