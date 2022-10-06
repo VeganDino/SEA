@@ -126,7 +126,7 @@
 
 | 나 표현하기                             |
 |:----------------------------------:|
-| <img src="/uploads/d832216b5fec70e5bdd7f6cfa71f42f8/나표현하기.gif" alt="나 표현하기" /> |
+| <img src="/uploads/d832216b5fec70e5bdd7f6cfa71f42f8/나표현하기.gif" alt="나 표현하기" width="700px"/> |
 
 ### 마이페이지
 
@@ -147,7 +147,7 @@
 
 | 기부하기                             |
 |:----------------------------------:|
-| <img src="/uploads/7f04037f44bcae25ffe0eea4cc902e21/동물기금에서_도네버튼까지.gif" alt="기부하기" /> |
+| <img src="/uploads/7f04037f44bcae25ffe0eea4cc902e21/동물기금에서_도네버튼까지.gif" alt="기부하기" width="700px"/> |
 
 ### NFT 민팅
 
@@ -156,7 +156,7 @@
 
 | NFT 민팅                             |
 |:----------------------------------:|
-| <img src="이미지 url" alt="NFT 민팅" /> |
+| <img src="이미지 url" alt="NFT 민팅" width="700px" /> |
 
 ### NFT 판매
 
@@ -167,7 +167,7 @@
 | NFT 판매                             |
 |:----------------------------------:|
 | <img src="이미지 url" alt="NFT 판매" /> |
-| <img src="/uploads/8ae3ab27ee83cff6c92c3814af2c189f/판매취소하기.gif" alt="판매 취소" /> |
+| <img src="/uploads/8ae3ab27ee83cff6c92c3814af2c189f/판매취소하기.gif" alt="판매 취소" width="700px" /> |
 
 ### NFT 구매
 
