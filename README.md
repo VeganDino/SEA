@@ -209,8 +209,8 @@
     </tr>
     <tr>
         <td align="center">UI/UX<br/>React<br/>Web3.js<br/>FastAPI</td>
-        <td align="center">UI/UX<br/>React<br</td>
-        <td align="center">UI/UX<br/>React</td>
+        <td align="center">UI/UX<br/>React<br/>Web3.js<br/></td>
+        <td align="center">UI/UX<br/>React<br/>Web3.js<br/></td>
         <td align="center">REST API<br/>Smart Contract<br/></td>
         <td align="center">REST API<br/>DB<br/>S3<br/>CI/CD<br/></td>
     </tr>
