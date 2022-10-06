@@ -147,7 +147,7 @@
 
 | 기부하기                             |
 |:----------------------------------:|
-| <img src="이미지 url" alt="기부하기" /> |
+| <img src="/uploads/7f04037f44bcae25ffe0eea4cc902e21/동물기금에서_도네버튼까지.gif" alt="기부하기" /> |
 
 ### NFT 민팅
 
@@ -167,6 +167,7 @@
 | NFT 판매                             |
 |:----------------------------------:|
 | <img src="이미지 url" alt="NFT 판매" /> |
+| <img src="/uploads/8ae3ab27ee83cff6c92c3814af2c189f/판매취소하기.gif" alt="판매 취소" /> |
 
 ### NFT 구매
 
@@ -176,7 +177,7 @@
 
 | NFT 구매                             |
 |:----------------------------------:|
-| <img src="이미지 url" alt="NFT 구매" /> |
+| <img src="/uploads/f396098ac09746db9add180dfe12f7f3/구매1.gif" alt="NFT 구매" /> |
 <br/>
 
 <div id="5"></div>
