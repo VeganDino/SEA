@@ -177,7 +177,7 @@
 
 | NFT 구매                             |
 |:----------------------------------:|
-| <img src="/uploads/f396098ac09746db9add180dfe12f7f3/구매1.gif" alt="NFT 구매" /> |
+| <img src="/uploads/f396098ac09746db9add180dfe12f7f3/구매1.gif" alt="NFT 구매" width="700px" /> |
 <br/>
 
 <div id="5"></div>
