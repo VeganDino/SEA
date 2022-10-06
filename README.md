@@ -2,7 +2,7 @@
 
 <div align="center">
   <br />
-  <img src="/uploads/db0e281172599cf15f744dff6ec7031d/sea.png" alt="Save Endangered Animal" />
+  <img src="/assets/sea.png" alt="Save Endangered Animal" />
   <br />
   <h1>서비스 개요</h1>
   <br />
@@ -102,7 +102,7 @@
 
 | 시스템 구성                                                       |
 |:------------------------------------------------------------:|
-| ![image](/uploads/e1c169d90d2a64ea1ca0db3ab873b999/아키텍쳐.png) |
+| ![image](/assets/아키텍쳐.png) |
 
 <br />
 
@@ -152,11 +152,11 @@
 
 | Jira BurnDown Chart                                               |
 |:-----------------------------------------------------------------:|
-| <img src="/uploads/de0207b34e34600505f418c938df5e9b/번다운차트.PNG" /> |
+| <img src="/assets/번다운차트.PNG" /> |
 
 | Notion                                                                                                                            |
 |:---------------------------------------------------------------------------------------------------------------------------------:|
-| <img src="/uploads/b4440910464b9dd6946775f0a57c9c1d/API명세서.PNG" /><img src="/uploads/0b30656d36d9a334f9d4b8c315b4cfc5/회의록.PNG" /> |
+| <img src="/assets/API명세서.PNG" /><img src="/assets/회의록.PNG" /> |
 
 <br />
 
