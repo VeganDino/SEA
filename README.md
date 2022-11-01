@@ -1,10 +1,10 @@
-# 특화프로젝트
+# 🦎 SEA (Save Endangered Animal) 
 
 <div align="center">
   <br />
-  <img src="./assets/sea.png" alt="Save Endangered Animal" />
+  <img src="./assets/sea.png" alt="Save Endangered Animal" width="700px"/>
   <br />
-  <h1>서비스 개요</h1>
+  <h2> 🐳 멸종위기 동물을 위한 NFT 토큰 기부 플랫폼</h2>
   <br />
 </div>
 
@@ -30,7 +30,6 @@
 
 > 서비스 소개
 
-#### 서비스에 대한 한마디
 
 <br/>
 
@@ -38,6 +37,7 @@
 
 ## 🛠️ 기술 스택
 
+<div align=center>
 <img src="https://img.shields.io/badge/Amazon S3-569A31?style=for-the-badge&logo=Amazon S3&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=Ubuntu&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=Jenkins&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
@@ -69,6 +69,7 @@
 <img src="https://img.shields.io/badge/Mattermost-0058CC?style=for-the-badge&logo=Mattermost&logoColor=white" style="height : auto; margin-left : 10px; margin-right : 10px;"/>
 <br/>
 
+  <br/>
 <details><summary> <b> 상세 기술스택 및 버전</b> </summary>
 
 | 구분            | 기술스택            | 상세내용               | 버전          |
@@ -100,6 +101,7 @@
 |               |                 | Jenkins            | 2.361.1     |
 
 </details>
+</div>
 
 <br />
 
@@ -226,7 +228,8 @@
 
 | Notion                                                                                                                            |
 |:---------------------------------------------------------------------------------------------------------------------------------:|
-| ![image](./assets/API명세서.png)![image](./assets/회의록.png) |
+|  <img src="./assets/API명세서.png" alt="Save Endangered Animal" width="850px"/><img src="./assets/회의록.png" alt="Save Endangered Animal" width="650px"/> |
+
 
 <br />
 
@@ -279,5 +282,5 @@
 | 와이어프레임  | [와이어프레임 바로가기](https://www.figma.com/file/6AqH2FhNiE8bfmz9ejHpCT/%ED%8A%B9%ED%99%94-5%EB%B0%98-6%EC%A1%B0?node-id=0%3A1) |
 | ERD     | [ERD 바로가기](https://www.erdcloud.com/d/cwdAmY6DuYgX46o2F)                                                           |
 | 빌드/배포   | [빌드/배포 바로가기](/exec/특화PJT_A506_포팅매뉴얼.pdf)                                                              |
-| 시연 시나리오 | [시연 시나리오 바로가기](/exec/시연 시나리오.pdf)                                                                  |
+| 시연 시나리오 | [시연 시나리오 바로가기](/exec/시연시나리오.pdf)                                                                  |
 | 발표자료    | [발표자료 바로가기](/exec/발표자료.pptx)                                                                  |
