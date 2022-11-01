@@ -26,9 +26,13 @@
 
 ## 💡 서비스 소개
 
-### 서비스 모토
+현재 동물 기부의 아쉬운 점 
+- 기부금 사용 정보 불투명성
+- 기부 독려 방안 미흡
+- 기부 후 흔히 답례로 나눠주는 에코백, 텀블러 등 불필요한 물품 제공으로 환경문제 발생
 
-> 서비스 소개
+-> **NFT에 관심**이 있거나 **멸종위기 동물 보호에 앞장서고 싶은 사람들 모두에게 적극적** 으로 어필할 수 있는 플랫폼
+
 
 
 <br/>
@@ -111,7 +115,8 @@
 
 | 시스템 구성                                                       |
 |:------------------------------------------------------------:|
-| ![image](./assets/아키텍쳐.png) |
+|  <img src="/assets/아키텍쳐.png" alt="메타마스크 로그인" width="750px" /> |
+
 
 <br />
 
@@ -156,7 +161,7 @@
 
 | 메타마스크 로그인                             |
 |:----------------------------------:|
-| <img src="/uploads/4ed045e37f09164975d7f1f716638ba6/로그인.gif" alt="메타마스크 로그인" width="700px" /> |
+| <img src="/images/로그인.gif" alt="메타마스크 로그인" width="700px" /> |
 
 ### 나 표현하기
 
@@ -166,7 +171,7 @@
 
 | 나 표현하기                             |
 |:----------------------------------:|
-| <img src="/uploads/d832216b5fec70e5bdd7f6cfa71f42f8/나표현하기.gif" alt="나 표현하기" width="700px"/> |
+| <img src="/images/나표현하기.gif" alt="나 표현하기" width="700px"/> |
 
 ### 마이페이지
 
@@ -177,7 +182,7 @@
 
 | 마이페이지                             |
 |:----------------------------------:|
-| <img src="/uploads/df313939ac4a3d1ef413336deac33d74/마이페이지.gif" alt="마이페이지" width="700px" /> |
+| <img src="/images/마이페이지.gif" alt="마이페이지" width="700px" /> |
 
 ### 기부하기
 
@@ -189,8 +194,8 @@
 
 | 기부하기                             |
 |:----------------------------------:|
-| <img src="/uploads/7f04037f44bcae25ffe0eea4cc902e21/동물기금에서_도네버튼까지.gif" alt="기부하기" width="700px"/> |
-| <img src="/uploads/2f431231a108c1a5971da32cdd373cc0/민팅까지.gif" alt="NFT 민팅" width="700px" /> |
+| <img src="/images/동물기금에서_도네버튼까지.gif" alt="기부하기" width="700px"/> |
+| <img src="/images/민팅까지.gif" alt="NFT 민팅" width="700px" /> |
 
 ### NFT 판매
 
@@ -200,8 +205,8 @@
 
 | NFT 판매                             |
 |:----------------------------------:|
-| <img src="/uploads/4c778adc8735b2bde2d6846bd9f22402/판매.gif" alt="NFT 판매" width="700px" /> |
-| <img src="/uploads/8ae3ab27ee83cff6c92c3814af2c189f/판매취소하기.gif" alt="판매 취소" width="700px" /> |
+| <img src="/images/판매.gif" alt="NFT 판매" width="700px" /> |
+| <img src="/images/판매취소하기.gif" alt="판매 취소" width="700px" /> |
 
 ### NFT 구매
 
@@ -211,7 +216,7 @@
 
 | NFT 구매                             |
 |:----------------------------------:|
-| <img src="/uploads/bb9c8c4281fccd58880e40967a6af7e0/구매.gif" alt="NFT 구매" width="700px" /> |
+| <img src="/images/구매.gif" alt="NFT 구매" width="700px" /> |
 <br/>
 
 <div id="5"></div>
